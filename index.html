@@ -3,50 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alexandre Rivière — Marketing Digital</title>
-  <meta name="description" content="Alexandre Rivière, alternant Marketing Digital chez CrazyEight. Google Ads, SEO, Automatisation, IA. MBA Strat. Digitale.">
-
+  <title>Alexandre RIVIÈRE — Marketing Digital</title>
+  <meta name="description" content="Alexandre RIVIÈRE, alternant Marketing Digital chez CrazyEight. Google Ads, SEO, Automatisation, IA. MBA Strat. Digitale.">
+  <template id="__bundler_thumbnail" data-bg-color="#080808">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#080808"/>
+      <text x="600" y="380" font-family="sans-serif" font-weight="700" font-size="120" fill="white" text-anchor="middle" letter-spacing="-6">AR</text>
+      <rect x="440" y="420" width="320" height="3" rx="2" fill="#2563EB"/>
+    </svg>
+  </template>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#060606; --paper:#F0EDE8; --blue:#2563EB; }
+    .min-h-screen{min-height:100vh}.flex{display:flex}.flex-col{flex-direction:column}.justify-end{justify-content:flex-end}.relative{position:relative}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.w-full{width:100%}.max-w-\[1400px\]{max-width:1400px}
+  </style>
+  <style>
+    /* ═══════════════════════════════════════
+       DA SYSTÈME — 1 accent, 2 fonds, sobriété
+       Bleu #2563EB sur noir #080808 / crème #F0EDE8
+    ═══════════════════════════════════════ */
+    :root {
+      --ink:    #080808;
+      --paper:  #F0EDE8;
+      --blue:   #2563EB;
+      --blue-lt:#DBEAFE;  /* light tint pour sections claires */
+    }
 
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     * { cursor:none !important; }
     html { scroll-behavior:smooth; }
+    html, body { overflow-x:hidden; max-width:100vw; }
 
     body {
       font-family:'DM Sans',sans-serif;
       background:var(--ink); color:#FAFAF9;
-      overflow-x:hidden; -webkit-font-smoothing:antialiased;
+      -webkit-font-smoothing:antialiased;
     }
 
     ::-webkit-scrollbar { width:3px; }
     ::-webkit-scrollbar-track { background:var(--ink); }
-    ::-webkit-scrollbar-thumb { background:#222; border-radius:2px; }
+    ::-webkit-scrollbar-thumb { background:#2a2a2a; border-radius:2px; }
 
-    /* ── CURSOR ── */
-    #cur-dot {
-      width:8px;height:8px;background:#fff;border-radius:50%;
-      position:fixed;top:0;left:0;pointer-events:none;z-index:9999;
-      mix-blend-mode:difference;will-change:transform;
-    }
-    #cur-ring {
-      width:38px;height:38px;border:1.5px solid rgba(255,255,255,.2);border-radius:50%;
-      position:fixed;top:0;left:0;pointer-events:none;z-index:9998;
-      mix-blend-mode:difference;
-      transition:width .3s,height .3s,border-color .3s;will-change:transform;
-    }
-    /* Hide custom cursor on touch devices */
-    @media (hover:none),(pointer:coarse) {
-      #cur-dot,#cur-ring { display:none !important; }
-      * { cursor:auto !important; }
-    }
+    /* ── CURSEUR ── */
+    #cur-dot { width:8px;height:8px;background:#fff;border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:difference;will-change:transform; }
+    #cur-ring { width:38px;height:38px;border:1.5px solid rgba(255,255,255,.2);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;mix-blend-mode:difference;transition:width .3s,height .3s,border-color .3s;will-change:transform; }
+    @media(hover:none),(pointer:coarse){ #cur-dot,#cur-ring{display:none!important} *{cursor:auto!important} }
 
-    /* ── PROGRESS ── */
+    /* ── BARRE PROGRESSION ── */
     #progress { position:fixed;top:0;left:0;height:2px;background:var(--blue);z-index:10000;width:0%;transition:width .08s linear; }
 
     /* ── LOADER ── */
@@ -54,203 +58,240 @@
     #loader.gone { opacity:0;visibility:hidden;pointer-events:none; }
     #loader-inner { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(40px,8vw,88px);letter-spacing:-.04em;color:white;overflow:hidden; }
     #loader-inner span { display:inline-block;animation:loUp .7s cubic-bezier(.16,1,.3,1) both; }
-    #loader-inner span:nth-child(2) { animation-delay:.08s; }
+    #loader-inner span:nth-child(2){animation-delay:.08s}
     @keyframes loUp { from{transform:translateY(110%)} to{transform:translateY(0)} }
 
-    /* ── TYPO ── */
+    /* ── TYPOGRAPHIE ── */
     .f-display { font-family:'Space Grotesk',sans-serif; }
-    .hero-name { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(52px,7.8vw,128px);line-height:1;letter-spacing:-.04em;white-space:nowrap; }
-    .section-title { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(42px,6vw,96px);line-height:.96;letter-spacing:-.035em; }
+    .hero-name  { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(52px,7.8vw,128px);line-height:1;letter-spacing:-.04em;white-space:nowrap; }
+    .section-label { font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28); }
+    .section-label-dk { font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(0,0,0,.3); }
+    .section-title-dk { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(42px,6vw,96px);line-height:.96;letter-spacing:-.035em;color:var(--ink); }
+    .section-title-lt { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(42px,6vw,96px);line-height:.96;letter-spacing:-.035em;color:#FAFAF9; }
     .cta-title { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(48px,8.5vw,140px);line-height:.95;letter-spacing:-.04em; }
 
     /* ── NAV ── */
-    #nav { position:fixed;top:0;left:0;right:0;z-index:200;transition:background .35s,backdrop-filter .35s,box-shadow .35s; }
-    #nav.scrolled { background:rgba(6,6,6,.85);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(255,255,255,.06); }
-    .nav-inner { max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,72px);height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px; }
-    .nav-logo { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.02em;color:white;text-decoration:none;flex-shrink:0; }
-    .nav-links { display:flex;align-items:center;gap:4px;list-style:none; }
-    .nav-links a { display:flex;align-items:center;padding:8px 14px;font-size:14px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;border-radius:8px;transition:color .2s,background .2s;min-height:44px; }
-    .nav-links a:hover,.nav-links a.active { color:white;background:rgba(255,255,255,.07); }
-    .nav-cta { display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:100px;background:white;color:var(--ink) !important;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s,transform .3s cubic-bezier(.16,1,.3,1);min-height:44px;flex-shrink:0; }
-    .nav-cta:hover { background:rgba(255,255,255,.9) !important; }
-    #ham { display:none;flex-direction:column;gap:5px;background:none;border:none;padding:10px;cursor:pointer !important; }
-    #ham span { display:block;width:22px;height:2px;background:white;border-radius:2px;transition:transform .3s,opacity .3s; }
-    #ham.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-    #ham.open span:nth-child(2) { opacity:0; }
-    #ham.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-    #mobile-menu { display:none;position:fixed;inset:0;top:64px;background:rgba(6,6,6,.96);backdrop-filter:blur(20px);z-index:199;padding:32px clamp(20px,4vw,72px);flex-direction:column;gap:4px; }
+    #nav {
+      position:fixed;top:16px;left:50%;transform:translateX(-50%);
+      z-index:200;width:auto;min-width:0;
+    }
+    .nav-inner {
+      display:flex;align-items:center;gap:4px;
+      height:44px;padding:4px;
+      background:rgba(14,14,14,.8);
+      backdrop-filter:blur(32px) saturate(180%);
+      -webkit-backdrop-filter:blur(32px) saturate(180%);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:14px;
+      box-shadow:0 4px 20px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.06);
+      white-space:nowrap;
+    }
+    .nav-logo {
+      font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13.5px;
+      letter-spacing:-.01em;color:white;text-decoration:none;flex-shrink:0;
+      padding:0 14px 0 10px;
+      border-right:1px solid rgba(255,255,255,.07);
+      margin-right:2px;
+      line-height:36px;
+    }
+    .nav-logo strong { color:var(--blue); }
+    .nav-links { display:flex;align-items:center;gap:1px;list-style:none;flex-shrink:0; }
+    .nav-links a {
+      display:flex;align-items:center;
+      padding:0 12px;height:36px;
+      font-size:12.5px;font-weight:500;
+      color:rgba(255,255,255,.42);
+      text-decoration:none;border-radius:10px;
+      transition:color .18s,background .18s;
+      white-space:nowrap;
+    }
+    .nav-links a:hover,.nav-links a.active { color:rgba(255,255,255,.9);background:rgba(255,255,255,.08); }
+    .nav-cta {
+      display:inline-flex;align-items:center;gap:6px;
+      padding:0 14px;height:36px;
+      border-radius:10px;
+      background:var(--blue);color:white!important;
+      font-size:12.5px;font-weight:600;
+      text-decoration:none;flex-shrink:0;
+      transition:opacity .18s;
+      margin-left:2px;
+    }
+    .nav-cta:hover { opacity:.85; }
+    #ham { display:none;flex-direction:column;gap:5px;background:none;border:none;padding:10px;cursor:pointer!important; }
+    #ham span { display:block;width:20px;height:1.5px;background:white;border-radius:2px;transition:transform .3s,opacity .3s; }
+    #ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    #ham.open span:nth-child(2){opacity:0}
+    #ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+    #mobile-menu {
+      display:none;position:fixed;left:16px;right:16px;top:72px;
+      background:rgba(10,10,10,.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+      border:1px solid rgba(255,255,255,.09);border-radius:18px;
+      z-index:199;padding:10px;flex-direction:column;gap:2px;
+    }
     #mobile-menu.open { display:flex; }
-    #mobile-menu a { font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;letter-spacing:-.02em;color:rgba(255,255,255,.6);text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .2s; }
-    #mobile-menu a:hover { color:white; }
-    #mobile-menu .mob-cta { margin-top:24px;font-size:20px;color:var(--blue) !important;border-bottom:none !important; }
+    #mobile-menu a {
+      font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;
+      letter-spacing:-.02em;color:rgba(255,255,255,.55);
+      text-decoration:none;padding:11px 14px;border-radius:10px;
+      transition:color .18s,background .18s;
+    }
+    #mobile-menu a:hover { color:white;background:rgba(255,255,255,.06); }
+    #mobile-menu .mob-cta { color:var(--blue)!important; }
+    @media(max-width:740px){ .nav-links,.nav-cta{display:none} #ham{display:flex} #nav{width:calc(100% - 32px);} }
+    @media(max-width:740px){ .nav-inner{width:100%;justify-content:space-between;} }
     @media(max-width:768px){ .nav-links,.nav-cta{display:none} #ham{display:flex} }
 
-    /* ── CLIP REVEAL ── */
+    /* ── REVEALS ── */
     .clip-wrap { overflow:hidden;display:block; }
     .clip-in { display:block;transform:translateY(105%);animation:clipUp 1s cubic-bezier(.16,1,.3,1) forwards; }
-    .ci1{animation-delay:.5s} .ci2{animation-delay:.65s} .ci3{animation-delay:.8s}
-    .ci4{animation-delay:.95s} .ci5{animation-delay:1.05s}
+    .ci2{animation-delay:.65s} .ci3{animation-delay:.8s} .ci4{animation-delay:.95s} .ci5{animation-delay:1.05s}
     @keyframes clipUp { to{transform:translateY(0)} }
-
-    /* ── SCROLL REVEAL ── */
-    .rv { opacity:0;transform:translateY(44px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1); }
+    .rv { opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1); }
     .rv.on { opacity:1;transform:translateY(0); }
-    .rv1{transition-delay:.06s} .rv2{transition-delay:.13s} .rv3{transition-delay:.20s}
-    .rv4{transition-delay:.27s} .rv5{transition-delay:.34s}
+    .rv1{transition-delay:.07s} .rv2{transition-delay:.14s} .rv3{transition-delay:.21s} .rv4{transition-delay:.28s} .rv5{transition-delay:.35s}
 
     /* ── ORBS ── */
-    .orb { position:absolute;border-radius:50%;filter:blur(110px);opacity:.12;pointer-events:none;will-change:transform; }
+    .orb { position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;will-change:transform; }
+    @keyframes orb1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(40px,-30px)} }
+    @keyframes orb2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,40px)} }
 
-    @keyframes orb1 {
-      0%   { transform:translate(0,0)         scale(1); }
-      20%  { transform:translate(48px,-36px)  scale(1.06); }
-      45%  { transform:translate(22px,52px)   scale(.96); }
-      70%  { transform:translate(-40px,18px)  scale(1.04); }
-      100% { transform:translate(0,0)         scale(1); }
-    }
-    @keyframes orb2 {
-      0%   { transform:translate(0,0)         scale(1); }
-      25%  { transform:translate(-32px,44px)  scale(1.08); }
-      55%  { transform:translate(38px,-28px)  scale(.94); }
-      80%  { transform:translate(12px,30px)   scale(1.03); }
-      100% { transform:translate(0,0)         scale(1); }
-    }
-    @keyframes orb3 {
-      0%   { transform:translate(0,0)         scale(1); }
-      30%  { transform:translate(28px,38px)   scale(1.07); }
-      60%  { transform:translate(-44px,-22px) scale(.95); }
-      85%  { transform:translate(16px,-36px)  scale(1.02); }
-      100% { transform:translate(0,0)         scale(1); }
-    }
-    @keyframes orb4 {
-      0%   { transform:translate(0,0)         scale(1); }
-      35%  { transform:translate(-20px,-42px) scale(1.1); }
-      65%  { transform:translate(34px,24px)   scale(.93); }
-      100% { transform:translate(0,0)         scale(1); }
-    }
-
-    /* ── GRID BG / NOISE ── */
-    .grid-bg { position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:60px 60px; }
-    .noise { position:absolute;inset:0;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    /* ── FOND GRILLE ── */
+    .grid-bg { position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:64px 64px; }
+    .noise { position:absolute;inset:0;pointer-events:none;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
     /* ── BADGES ── */
-    .b { display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:100px;font-size:12px;font-weight:500;letter-spacing:.015em; }
-    .b-dk  { background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.55); }
-    .b-bl  { background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.3);color:#93B4FA; }
-    .b-gn  { background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.25);color:#86EFAC; }
-    .b-gn-lt { background:rgba(22,163,74,.1);border:1px solid rgba(22,163,74,.28);color:#15803d; }
-    .b-am  { background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:#FCD34D; }
-    .b-lt  { background:rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.1);color:rgba(0,0,0,.6); }
-    .b-bl-lt { background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.2);color:#1d4ed8; }
+    .badge { display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:100px;font-size:11px;font-weight:500;letter-spacing:.01em; }
+    .badge-dk { background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5); }
+    .badge-lt { background:rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.09);color:rgba(0,0,0,.5); }
+    .badge-bl { background:rgba(37,99,235,.14);border:1px solid rgba(37,99,235,.25);color:#93B4FA; }
+    .badge-bl-lt { background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.18);color:#1d4ed8; }
+    .badge-gn { background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);color:#86EFAC; }
 
-    /* ── EXPERIENCE CARDS (uniform grid) ── */
-    .exp-grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-    @media(max-width:1024px){ .exp-grid{grid-template-columns:repeat(2,1fr)} }
-    @media(max-width:600px)  { .exp-grid{grid-template-columns:1fr} }
+    /* ── CARDS EXPÉRIENCES ── */
+    .exp-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06); }
+    @media(max-width:900px){ .exp-grid{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:560px){ .exp-grid{grid-template-columns:1fr} }
 
     .exp-card {
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.075);
-      border-radius:20px;
-      padding:28px;
-      display:flex;flex-direction:column;gap:0;
-      cursor:pointer !important;
-      transition:background .3s,border-color .3s,transform .4s cubic-bezier(.16,1,.3,1);
-      min-height:300px;
+      background:var(--ink);
+      padding:32px;
+      display:flex;flex-direction:column;
+      cursor:pointer!important;
+      transition:background .25s;
+      position:relative;
+      min-height:280px;
     }
-    .exp-card:hover {
-      background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.16);
-      transform:translateY(-4px);
-    }
-    .exp-card-top { flex:1; }
-    .exp-card-footer { margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06); }
-
-    .exp-date { font-size:11px;color:rgba(255,255,255,.3);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px; }
-    .exp-company { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(20px,2vw,26px);color:white;letter-spacing:-.025em;margin-bottom:6px;line-height:1.15; }
-    .exp-role { font-size:13px;color:rgba(255,255,255,.45);margin-bottom:0;line-height:1.5; }
-    .exp-tags { display:flex;flex-wrap:wrap;gap:5px; }
-    .exp-more { font-size:12px;font-weight:500;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:5px;transition:color .2s; }
-    .exp-card:hover .exp-more { color:rgba(255,255,255,.7); }
+    .exp-card:hover { background:#111; }
+    .exp-card-num { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;color:var(--blue);letter-spacing:.12em;margin-bottom:28px; }
+    .exp-card-company { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(18px,1.8vw,22px);color:white;letter-spacing:-.025em;margin-bottom:6px;line-height:1.2; }
+    .exp-card-role { font-size:13px;color:rgba(255,255,255,.4);line-height:1.5;margin-bottom:0; }
+    .exp-card-footer { margin-top:auto;padding-top:24px;display:flex;align-items:center;justify-content:space-between; }
+    .exp-card-date { font-size:11px;color:rgba(255,255,255,.25);font-weight:500; }
+    .exp-card-cta { display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:rgba(255,255,255,.3);transition:color .2s; }
+    .exp-card-cta span.dot { width:5px;height:5px;border-radius:50%;background:var(--blue);animation:pulse 2s infinite;flex-shrink:0; }
+    .exp-card:hover .exp-card-cta { color:var(--blue); }
 
     /* ── MODAL ── */
-    #modal-overlay {
-      position:fixed;inset:0;z-index:5000;
-      background:rgba(0,0,0,.75);backdrop-filter:blur(12px);
-      display:flex;align-items:center;justify-content:center;
-      padding:clamp(16px,3vw,48px);
-      opacity:0;visibility:hidden;
-      transition:opacity .35s,visibility .35s;
-    }
+    #modal-overlay { position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.82);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:center;padding:clamp(16px,3vw,48px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s; }
     #modal-overlay.open { opacity:1;visibility:visible; }
-
-    #modal-box {
-      background:#111;
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:24px;
-      width:100%;max-width:680px;
-      max-height:88vh;overflow-y:auto;
-      padding:clamp(28px,4vw,48px);
-      position:relative;
-      transform:translateY(24px);
-      transition:transform .4s cubic-bezier(.16,1,.3,1);
-    }
+    #modal-box { background:#101010;border:1px solid rgba(255,255,255,.09);border-radius:20px;width:100%;max-width:660px;max-height:88vh;overflow-y:auto;padding:clamp(28px,4vw,48px);position:relative;transform:translateY(20px);transition:transform .4s cubic-bezier(.16,1,.3,1); }
     #modal-overlay.open #modal-box { transform:translateY(0); }
-
     #modal-box::-webkit-scrollbar { width:3px; }
-    #modal-box::-webkit-scrollbar-thumb { background:#333;border-radius:2px; }
-
-    #modal-close {
-      position:absolute;top:20px;right:20px;
-      width:36px;height:36px;border-radius:50%;
-      background:rgba(255,255,255,.08);border:none;
-      color:rgba(255,255,255,.6);font-size:18px;
-      display:flex;align-items:center;justify-content:center;
-      cursor:pointer !important;
-      transition:background .2s,color .2s;
-    }
-    #modal-close:hover { background:rgba(255,255,255,.14);color:white; }
-
-    .modal-date { font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center; }
-    .modal-company { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(26px,3vw,38px);color:white;letter-spacing:-.03em;margin-bottom:8px;line-height:1.1; }
-    .modal-role { font-size:15px;color:rgba(255,255,255,.5);margin-bottom:24px;line-height:1.5; }
+    #modal-box::-webkit-scrollbar-thumb { background:#222; }
+    #modal-close { position:absolute;top:20px;right:20px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.07);border:none;color:rgba(255,255,255,.5);font-size:16px;display:flex;align-items:center;justify-content:center;cursor:pointer!important;transition:background .2s; }
+    #modal-close:hover { background:rgba(255,255,255,.12); }
+    .modal-eyebrow { font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center; }
+    .modal-company { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(24px,3vw,36px);color:white;letter-spacing:-.03em;margin-bottom:6px;line-height:1.1; }
+    .modal-role { font-size:14px;color:rgba(255,255,255,.45);margin-bottom:0;line-height:1.5; }
     .modal-divider { border:none;border-top:1px solid rgba(255,255,255,.07);margin:24px 0; }
-    .modal-label { font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:12px; }
-    .modal-desc { font-size:15px;line-height:1.75;color:rgba(255,255,255,.6);margin-bottom:0; }
+    .modal-label { font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:12px; }
+    .modal-body { font-size:14px;line-height:1.78;color:rgba(255,255,255,.55); }
     .modal-tasks { list-style:none;display:flex;flex-direction:column;gap:10px; }
-    .modal-tasks li { font-size:14px;line-height:1.65;color:rgba(255,255,255,.55);padding-left:20px;position:relative; }
-    .modal-tasks li::before { content:'→';position:absolute;left:0;color:rgba(255,255,255,.25); }
-    .modal-intro { font-size:14px;line-height:1.7;color:rgba(255,255,255,.45);margin-top:10px;font-style:italic; }
-    .modal-quote { margin:20px 0 0;padding:16px 20px;border-left:2px solid rgba(255,255,255,.18);font-size:14px;line-height:1.7;color:rgba(255,255,255,.5);font-style:italic; }
-    .modal-metrics { display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px; }
-    .modal-metric { background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px 16px; }
-    .modal-metric-val { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;color:white;line-height:1; }
-    .modal-metric-lbl { font-size:11px;color:rgba(255,255,255,.35);margin-top:5px; }
+    .modal-tasks li { font-size:14px;line-height:1.65;color:rgba(255,255,255,.5);padding-left:20px;position:relative; }
+    .modal-tasks li::before { content:'→';position:absolute;left:0;color:var(--blue);font-weight:600; }
+    .modal-quote { margin:20px 0 0;padding:16px 20px;border-left:2px solid var(--blue);font-size:14px;line-height:1.7;color:rgba(255,255,255,.45);font-style:italic; }
+    .modal-metrics { display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px; }
+    .modal-metric { background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px 16px; }
+    .modal-metric-val { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:white;line-height:1; }
+    .modal-metric-lbl { font-size:11px;color:rgba(255,255,255,.3);margin-top:5px; }
     .modal-tags { display:flex;flex-wrap:wrap;gap:6px; }
 
-    /* ── LIGHT SECTION ── */
-    .s-light { background:var(--paper);color:var(--ink); }
-    .s-light .section-title { color:var(--ink); }
+    /* ── SAVOIR-FAIRE ── */
+    .sk-item { display:grid;grid-template-columns:36px 1fr 20px;gap:16px;align-items:center;padding:18px 0 18px 12px;border-bottom:1px solid rgba(0,0,0,.07);cursor:pointer;position:relative;transition:padding-left .2s; }
+    .sk-item::before { content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--blue);transform:scaleY(0);transform-origin:bottom;transition:transform .25s cubic-bezier(.16,1,.3,1);border-radius:2px; }
+    .sk-item:hover::before,.sk-item.sk-active::before { transform:scaleY(1); }
+    .sk-item:hover,.sk-item.sk-active { padding-left:20px; }
+    .ski-num { font-size:10px;font-weight:700;letter-spacing:.15em;color:rgba(0,0,0,.25);transition:color .2s; }
+    .ski-title { font-size:clamp(13px,1.1vw,15px);font-weight:500;color:rgba(0,0,0,.5);line-height:1.4;transition:color .2s; }
+    .ski-arr { font-size:13px;color:rgba(0,0,0,.15);transition:color .2s,transform .2s;text-align:right; }
+    .sk-item:hover .ski-num,.sk-item.sk-active .ski-num { color:var(--blue); }
+    .sk-item:hover .ski-title,.sk-item.sk-active .ski-title { color:#0C0C0C;font-weight:600; }
+    .sk-item:hover .ski-arr,.sk-item.sk-active .ski-arr { color:var(--blue);transform:translateX(3px); }
+    @media(max-width:760px){ #sk-split{grid-template-columns:1fr!important} #sk-split>div:last-child{display:none!important} }
+    @media(min-width:760px){ .sk-acc{display:none!important} }
 
-    /* ── SKILL ROW ── */
-    .sk-row { border-bottom:1px solid rgba(0,0,0,.07);transition:background .2s; }
-    .sk-row:hover { background:rgba(0,0,0,.03); }
-    .sk-row:last-child { border-bottom:none; }
+    /* ── IA MODÈLES ── */
+    .ia-model-row { border-bottom:1px solid rgba(0,0,0,.07);cursor:pointer;transition:background .2s;border-radius:4px; }
+    .ia-model-row:last-child { border-bottom:none; }
+    .ia-model-row:hover { background:rgba(0,0,0,.025); }
+    .ia-model-row.open { background:rgba(37,99,235,.05);border-radius:12px; }
+    .ia-model-header { display:grid;grid-template-columns:28px 1fr auto auto;gap:14px;align-items:center;padding:18px 12px; }
+    .ia-model-num { font-size:10px;font-weight:700;letter-spacing:.15em;color:rgba(0,0,0,.25);transition:color .2s; }
+    .ia-model-name { font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(17px,1.8vw,22px);color:#0C0C0C;transition:color .2s; }
+    .ia-model-tag { font-size:11px;font-weight:500;color:rgba(0,0,0,.35);background:rgba(0,0,0,.05);padding:3px 10px;border-radius:100px; }
+    .ia-model-arrow { font-size:14px;color:rgba(0,0,0,.2);transition:transform .3s cubic-bezier(.16,1,.3,1),color .2s; }
+    .ia-model-row.open .ia-model-arrow { transform:rotate(180deg);color:var(--blue); }
+    .ia-model-row.open .ia-model-num,.ia-model-row.open .ia-model-name { color:var(--blue); }
+    .ia-model-body { max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1),opacity .3s;opacity:0; }
+    .ia-model-body p { padding:0 12px 20px calc(28px + 14px);font-size:14px;line-height:1.8;color:rgba(0,0,0,.5); }
+    .ia-model-row.open .ia-model-body { max-height:160px;opacity:1; }
 
     /* ── MARQUEE ── */
-    .mq-track { display:flex;white-space:nowrap;animation:mq 24s linear infinite; }
+    .mq-track { display:flex;white-space:nowrap;animation:mq 28s linear infinite; }
     .mq-track:hover { animation-play-state:paused; }
     @keyframes mq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    .mq-item { display:inline-flex;align-items:center;gap:28px;padding-right:28px; }
 
-    /* ── MAG BTN ── */
+    /* ── MAG ── */
     .mag { display:inline-flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.16,1,.3,1); }
 
-    /* ── REDUCED MOTION ── */
+    /* ── ANIMATIONS ── */
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    @keyframes bounceY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+    @keyframes hcScroll { from{transform:translateY(0)} to{transform:translateY(-50%)} }
+
+    /* ── CAROUSEL HERO ── */
+    #hero-carousel { position:absolute;top:0;right:0;bottom:44px;width:clamp(280px,38%,520px);display:flex;gap:12px;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 14%,black 86%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,black 14%,black 86%,transparent 100%);z-index:5; }
+    #hero-carousel:hover .hc-track { animation-play-state:paused; }
+    .hc-col { flex:1;overflow:hidden; }
+    .hc-track { animation:hcScroll linear infinite;will-change:transform; }
+    .hc-strip { display:flex;flex-direction:column;gap:12px;padding-bottom:12px; }
+    .hc-card { position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.07);flex-shrink:0; }
+    .hc-card img { width:100%;height:auto;max-height:260px;object-fit:cover;display:block;transition:transform .4s; }
+    .hc-card:hover img { transform:scale(1.03); }
+    .hc-label { position:absolute;bottom:0;left:0;right:0;padding:24px 10px 8px;background:linear-gradient(transparent,rgba(0,0,0,.7));font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);opacity:0;transition:opacity .25s; }
+    .hc-card:hover .hc-label { opacity:1; }
+    @media(max-width:960px){ #hero-carousel{display:none} }
+
+    /* ── MOBILE ── */
+    @media(max-width:640px){
+      .hero-name { white-space:normal!important;font-size:clamp(38px,12vw,72px)!important;line-height:1.05!important; }
+      section { padding-left:20px!important;padding-right:20px!important; }
+    }
+    @media(max-width:640px){
+      #fm-year-row { display:none!important; }
+      #fm-rail-row { display:none!important; }
+      #fm-content-row { grid-template-columns:1fr!important;gap:0!important; }
+      #fmc1,#fmc2,#fmc3 { text-align:left!important;align-items:flex-start!important;padding:28px 0!important;border-bottom:1px solid rgba(0,0,0,.08); }
+      .fm-mob-yr { display:block!important; }
+      .fm-tick { display:none!important; }
+    }
+    .fm-mob-yr { display:none;font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:28px;color:#0C0C0C;letter-spacing:-.04em;line-height:1;margin-bottom:12px; }
+    @media(max-width:640px){ #lang-grid { grid-template-columns:1fr!important; } }
+    @media(max-width:680px){ #ia-grid { grid-template-columns:1fr!important; } }
+    @media(max-width:900px){ #ia-use-grid { grid-template-columns:1fr 1fr!important; } }
+    @media(max-width:560px){ #ia-use-grid { grid-template-columns:1fr!important; } }
+    @media(max-width:640px){ #apropos-grid { grid-template-columns:32px 1fr!important; } }
+
     @media(prefers-reduced-motion:reduce){
       .clip-in{animation:none;transform:none}
       .rv{opacity:1;transform:none;transition:none}
@@ -261,1502 +302,810 @@
 </head>
 <body>
 
-  <div id="progress" role="progressbar" aria-hidden="true"></div>
-  <div id="cur-dot"  aria-hidden="true"></div>
-  <div id="cur-ring" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+<div id="cur-dot"  aria-hidden="true"></div>
+<div id="cur-ring" aria-hidden="true"></div>
 
-  <div id="loader" aria-hidden="true">
-    <div id="loader-inner"><span>A</span><span>R</span></div>
+<div id="loader" aria-hidden="true">
+  <div id="loader-inner"><span>A</span><span>R</span></div>
+</div>
+
+<!-- ══ MODAL ══ -->
+<div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div id="modal-box">
+    <button id="modal-close" aria-label="Fermer">✕</button>
+    <div id="modal-content"></div>
   </div>
+</div>
 
-  <!-- ══ MODAL ══ -->
-  <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div id="modal-box">
-      <button id="modal-close" aria-label="Fermer">✕</button>
-      <div id="modal-content"></div>
-    </div>
+<!-- ══ NAV ══ -->
+<nav id="nav" aria-label="Navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Alexandre <strong>RIVIÈRE</strong></a>
+    <ul class="nav-links" role="list">
+      <li><a href="#experiences" data-section="experiences">Expériences</a></li>
+      <li><a href="#savoir-faire" data-section="savoir-faire">Savoir-faire</a></li>
+      <li><a href="#formation" data-section="formation">Formation</a></li>
+      <li><a href="#ia" data-section="ia">IA</a></li>
+      <li><a href="#apropos" data-section="apropos">À propos</a></li>
+    </ul>
+    <a href="mailto:rivierealex5@gmail.com" class="nav-cta mag">
+      Parlons-en
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
+    <button id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
+</nav>
 
-  <!-- ══ NAV ══ -->
-  <nav id="nav" aria-label="Navigation principale">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">Alexandre Rivière</a>
-      <ul class="nav-links" role="list">
-        <li><a href="#experiences" data-section="experiences">Expériences</a></li>
-        <li><a href="#savoir-faire" data-section="savoir-faire">Savoir-faire</a></li>
-        <li><a href="#outils" data-section="outils">Outils</a></li>
-        <li><a href="#formation" data-section="formation">Formation</a></li>
-        <li><a href="#apropos" data-section="apropos">À propos</a></li>
-      </ul>
-      <a href="mailto:rivierealex5@gmail.com" class="nav-cta mag">
-        Parlons-en
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-      </a>
-      <button id="ham" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<div id="mobile-menu" role="dialog" aria-modal="true">
+  <a href="#experiences" class="mob-link">Expériences</a>
+  <a href="#savoir-faire" class="mob-link">Savoir-faire</a>
+  <a href="#formation" class="mob-link">Formation</a>
+  <a href="#ia" class="mob-link">IA</a>
+  <a href="#apropos" class="mob-link">À propos</a>
+  <a href="mailto:rivierealex5@gmail.com" class="mob-cta mob-link">Parlons-en →</a>
+</div>
 
-  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu mobile">
-    <a href="#experiences" class="mob-link">Expériences</a>
-    <a href="#savoir-faire" class="mob-link">Savoir-faire</a>
-    <a href="#outils" class="mob-link">Outils</a>
-    <a href="#formation" class="mob-link">Formation</a>
-    <a href="#apropos" class="mob-link">À propos</a>
-    <a href="mailto:rivierealex5@gmail.com" class="mob-cta mob-link">Parlons-en →</a>
-  </div>
+<!-- ══ HERO ══ -->
+<section id="hero" class="relative min-h-screen flex flex-col justify-end"
+         style="padding:100px clamp(20px,4vw,72px) 96px;overflow:hidden;">
+  <div class="grid-bg"></div>
+  <div class="noise"></div>
+  <div class="orb" style="width:680px;height:680px;background:var(--blue);top:-220px;left:-220px;opacity:.08;animation:orb1 18s ease-in-out infinite;"></div>
+  <div class="orb" style="width:400px;height:400px;background:var(--blue);top:20%;right:-160px;opacity:.05;animation:orb2 24s ease-in-out infinite;animation-delay:-8s;"></div>
 
-  <!-- ══ HERO ══ -->
-  <section id="hero" class="relative min-h-screen flex flex-col justify-end"
-           style="padding:80px clamp(20px,4vw,72px) 96px;">
-    <div class="grid-bg"></div>
-    <div class="noise"></div>
-    <div class="orb" style="width:700px;height:700px;background:#2563EB;top:-200px;left:-240px;opacity:.13;animation:orb1 16s ease-in-out infinite;"></div>
-    <div class="orb" style="width:440px;height:440px;background:#7C3AED;top:18%;right:-180px;opacity:.09;animation:orb2 21s ease-in-out infinite;animation-delay:-6s;"></div>
-    <div class="orb" style="width:340px;height:340px;background:#3B82F6;bottom:22%;left:38%;opacity:.07;animation:orb3 26s ease-in-out infinite;animation-delay:-11s;"></div>
-    <div class="orb" style="width:280px;height:280px;background:#0EA5E9;bottom:8%;right:20%;opacity:.06;animation:orb4 19s ease-in-out infinite;animation-delay:-4s;"></div>
+  <div class="relative z-10 max-w-[1400px] mx-auto w-full">
+    <h1>
+      <span class="clip-wrap"><span class="clip-in ci2 hero-name" style="color:#FAFAF9;">Alexandre</span></span>
+      <span class="clip-wrap"><span class="clip-in ci3 hero-name" style="color:rgba(255,255,255,.18);">RIVIÈRE.</span></span>
+    </h1>
 
-    <div class="relative z-10 max-w-[1400px] mx-auto w-full">
-      <h1>
-        <span class="clip-wrap"><span class="clip-in ci2 hero-name" style="color:#FAFAF9;">Alexandre</span></span>
-        <span class="clip-wrap"><span class="clip-in ci3 hero-name" style="color:rgba(255,255,255,.16);">Rivière.</span></span>
-      </h1>
-
-      <div class="clip-wrap" style="margin-top:28px;">
-        <p class="clip-in ci4" style="font-size:clamp(14px,1.3vw,18px);color:rgba(255,255,255,.42);font-weight:300;max-width:480px;line-height:1.7;">
-          Marketing Digital — Google Ads · SEO · Automatisation · IA
-        </p>
-      </div>
-
-      <!-- Info row — ancrée sous le sous-titre -->
-      <div class="clip-wrap" style="margin-top:40px;">
-        <div class="clip-in ci5 hero-info-row" style="display:flex;align-items:center;gap:16px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);">
-          <span style="display:flex;align-items:center;gap:7px;flex-shrink:0;">
-            <span style="width:6px;height:6px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite;display:inline-block;flex-shrink:0;"></span>
-            <span style="font-size:12px;font-weight:500;color:rgba(255,255,255,.6);letter-spacing:.02em;white-space:nowrap;">Disponible dès 2027</span>
-          </span>
-          <span class="hero-sep" style="width:1px;height:14px;background:rgba(255,255,255,.1);display:inline-block;flex-shrink:0;"></span>
-          <span style="font-size:12px;color:rgba(255,255,255,.28);letter-spacing:.02em;white-space:nowrap;">MBA Strat. Digitale</span>
-          <span class="hero-sep" style="width:1px;height:14px;background:rgba(255,255,255,.1);display:inline-block;flex-shrink:0;"></span>
-          <span style="font-size:12px;color:rgba(255,255,255,.28);letter-spacing:.02em;white-space:nowrap;">CrazyEight · Limoges</span>
-        </div>
-      </div>
-
-      <div style="margin-top:56px;">
-        <div style="display:inline-flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.2);">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="animation:bounceY 2s ease-in-out infinite;"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;">Scroll</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Mobile image stack (visible only < 960px) ── -->
-    <div id="hero-mob-stack" aria-hidden="true" style="display:none;position:absolute;top:88px;right:16px;gap:0;z-index:6;">
-      <div style="position:relative;width:clamp(120px,32vw,170px);">
-        <!-- Card 3 (back) -->
-        <div style="position:absolute;top:18px;left:-14px;width:100%;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);transform:rotate(-5deg);opacity:.5;">
-          <img src="images/posts-vintage-wisy.png" alt="" style="width:100%;height:120px;object-fit:cover;display:block;">
-        </div>
-        <!-- Card 2 (mid) -->
-        <div style="position:absolute;top:8px;left:-6px;width:100%;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);transform:rotate(-2deg);opacity:.75;">
-          <img src="images/google-ads-crazy-eight.png" alt="" style="width:100%;height:120px;object-fit:cover;display:block;">
-        </div>
-        <!-- Card 1 (front) -->
-        <div style="position:relative;width:100%;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 40px rgba(0,0,0,.4);">
-          <img src="images/data-campagne-30-jours.png" alt="Création visuelle" style="width:100%;height:120px;object-fit:cover;display:block;">
-        </div>
-        <!-- Spacer pour que le parent prenne la hauteur -->
-        <div style="height:148px;"></div>
-      </div>
-    </div>
-
-    <!-- ── Hero Carousel ── -->
-    <div id="hero-carousel" aria-hidden="true">
-      <!-- Col A — défile plus vite -->
-      <div class="hc-col">
-        <div class="hc-track" style="animation-duration:38s;">
-          <div class="hc-strip">
-            <div class="hc-card"><img src="images/google-ads-crazy-eight.png" alt="Google Ads CrazyEight" loading="lazy"><span class="hc-label">CrazyEight · Google Ads</span></div>
-            <div class="hc-card"><img src="images/audit-seo-perso.png" alt="Audit SEO" loading="lazy"><span class="hc-label">Perso · Audit SEO</span></div>
-            <div class="hc-card"><img src="images/posts-vintage-wisy.png" alt="Posts Wisy" loading="lazy"><span class="hc-label">Wisy · Posts</span></div>
-            <div class="hc-card"><img src="images/formation-ia-perso.png" alt="Formation IA" loading="lazy"><span class="hc-label">Perso · Formation IA</span></div>
-            <div class="hc-card"><img src="images/data-campagne-30-jours.png" alt="Data campagne" loading="lazy"><span class="hc-label">Data · Campagne 30j</span></div>
-            <div class="hc-card"><img src="images/carrousel-wisy.png" alt="Carrousel Wisy" loading="lazy"><span class="hc-label">Wisy · Carrousel</span></div>
-            <div class="hc-card"><img src="images/mon-notion-perso.png" alt="Notion" loading="lazy"><span class="hc-label">Perso · Notion</span></div>
-            <div class="hc-card"><img src="images/affiche-perso.png" alt="Affiche" loading="lazy"><span class="hc-label">Perso · Affiche</span></div>
-            <div class="hc-card"><img src="images/planning-crazy-eight.png" alt="Planning CrazyEight" loading="lazy"><span class="hc-label">CrazyEight · Planning</span></div>
-          </div>
-          <div class="hc-strip" aria-hidden="true">
-            <div class="hc-card"><img src="images/google-ads-crazy-eight.png" alt="" loading="lazy"><span class="hc-label">CrazyEight · Google Ads</span></div>
-            <div class="hc-card"><img src="images/audit-seo-perso.png" alt="" loading="lazy"><span class="hc-label">Perso · Audit SEO</span></div>
-            <div class="hc-card"><img src="images/posts-vintage-wisy.png" alt="" loading="lazy"><span class="hc-label">Wisy · Posts</span></div>
-            <div class="hc-card"><img src="images/formation-ia-perso.png" alt="" loading="lazy"><span class="hc-label">Perso · Formation IA</span></div>
-            <div class="hc-card"><img src="images/data-campagne-30-jours.png" alt="" loading="lazy"><span class="hc-label">Data · Campagne 30j</span></div>
-            <div class="hc-card"><img src="images/carrousel-wisy.png" alt="" loading="lazy"><span class="hc-label">Wisy · Carrousel</span></div>
-            <div class="hc-card"><img src="images/mon-notion-perso.png" alt="" loading="lazy"><span class="hc-label">Perso · Notion</span></div>
-            <div class="hc-card"><img src="images/affiche-perso.png" alt="" loading="lazy"><span class="hc-label">Perso · Affiche</span></div>
-            <div class="hc-card"><img src="images/planning-crazy-eight.png" alt="" loading="lazy"><span class="hc-label">CrazyEight · Planning</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- Col B — défile plus lentement -->
-      <div class="hc-col">
-        <div class="hc-track" style="animation-duration:56s;animation-delay:-18s;">
-          <div class="hc-strip">
-            <div class="hc-card"><img src="images/ticket-or-wisy.png" alt="Ticket Or Wisy" loading="lazy"><span class="hc-label">Wisy · Ticket d'or</span></div>
-            <div class="hc-card"><img src="images/banniere-perso.png" alt="Bannière" loading="lazy"><span class="hc-label">Perso · Bannière</span></div>
-            <div class="hc-card"><img src="images/nouvelle-vie-altitude.png" alt="Création" loading="lazy"><span class="hc-label">Copywriting · Altitude</span></div>
-            <div class="hc-card"><img src="images/4-familles-wisy.png" alt="4 familles Wisy" loading="lazy"><span class="hc-label">Wisy · Jeu de cartes</span></div>
-            <div class="hc-card"><img src="images/carnet-bord-soutenance.png" alt="Carnet de bord" loading="lazy"><span class="hc-label">Perso · Soutenance</span></div>
-            <div class="hc-card"><img src="images/mon-portfolio.png" alt="Portfolio" loading="lazy"><span class="hc-label">Perso · Portfolio</span></div>
-            <div class="hc-card"><img src="images/post-perso.png" alt="Post" loading="lazy"><span class="hc-label">Perso · Post</span></div>
-            <div class="hc-card"><img src="images/billet-avion-wisy.png" alt="Billet Wisy" loading="lazy"><span class="hc-label">Wisy · Billet avion</span></div>
-            <div class="hc-card"><img src="images/lhistoire-de.png" alt="L'histoire de" loading="lazy"><span class="hc-label">Storytelling</span></div>
-          </div>
-          <div class="hc-strip" aria-hidden="true">
-            <div class="hc-card"><img src="images/ticket-or-wisy.png" alt="" loading="lazy"><span class="hc-label">Wisy · Ticket d'or</span></div>
-            <div class="hc-card"><img src="images/banniere-perso.png" alt="" loading="lazy"><span class="hc-label">Perso · Bannière</span></div>
-            <div class="hc-card"><img src="images/nouvelle-vie-altitude.png" alt="" loading="lazy"><span class="hc-label">Copywriting · Altitude</span></div>
-            <div class="hc-card"><img src="images/4-familles-wisy.png" alt="" loading="lazy"><span class="hc-label">Wisy · Jeu de cartes</span></div>
-            <div class="hc-card"><img src="images/carnet-bord-soutenance.png" alt="" loading="lazy"><span class="hc-label">Perso · Soutenance</span></div>
-            <div class="hc-card"><img src="images/mon-portfolio.png" alt="" loading="lazy"><span class="hc-label">Perso · Portfolio</span></div>
-            <div class="hc-card"><img src="images/post-perso.png" alt="" loading="lazy"><span class="hc-label">Perso · Post</span></div>
-            <div class="hc-card"><img src="images/billet-avion-wisy.png" alt="" loading="lazy"><span class="hc-label">Wisy · Billet avion</span></div>
-            <div class="hc-card"><img src="images/lhistoire-de.png" alt="" loading="lazy"><span class="hc-label">Storytelling</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ticker -->
-    <div style="position:absolute;bottom:0;left:0;right:0;border-top:1px solid rgba(255,255,255,.06);overflow:hidden;">
-      <div style="display:flex;width:max-content;animation:mq 32s linear infinite;">
-        <!-- Track 1 -->
-        <div style="display:flex;align-items:center;gap:0;padding:13px 0;white-space:nowrap;font-size:11px;font-weight:500;letter-spacing:.04em;color:rgba(255,255,255,.25);">
-          <span style="padding:0 32px;">Google Ads · Performance Max</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">SEO Technique &amp; Éditorial</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">Automatisation Make · n8n · Zapier</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">IA &amp; Data · Prompting · Claude</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">GTM · Looker Studio · GA4</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">Voltaire <span style="color:rgba(255,255,255,.5);">772</span> / 1000</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">TOEIC <span style="color:rgba(255,255,255,.5);">725</span> / 990</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">MBA Stratégie Digitale · Niveau 7</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">Disponible dès 2027</span><span style="color:rgba(255,255,255,.1);">✦</span>
-        </div>
-        <!-- Track 2 (duplicate for seamless loop) -->
-        <div aria-hidden="true" style="display:flex;align-items:center;gap:0;padding:13px 0;white-space:nowrap;font-size:11px;font-weight:500;letter-spacing:.04em;color:rgba(255,255,255,.25);">
-          <span style="padding:0 32px;">Google Ads · Performance Max</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">SEO Technique &amp; Éditorial</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">Automatisation Make · n8n · Zapier</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">IA &amp; Data · Prompting · Claude</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">GTM · Looker Studio · GA4</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">Voltaire <span style="color:rgba(255,255,255,.5);">772</span> / 1000</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">TOEIC <span style="color:rgba(255,255,255,.5);">725</span> / 990</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">MBA Stratégie Digitale · Niveau 7</span><span style="color:rgba(255,255,255,.1);">✦</span>
-          <span style="padding:0 32px;">Disponible dès 2027</span><span style="color:rgba(255,255,255,.1);">✦</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Transition dark→light ── -->
-  <div aria-hidden="true" style="display:block;background:var(--paper);height:80px;overflow:hidden;line-height:0;font-size:0;margin:0;padding:0;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;width:100%;height:80px;"><polygon points="0,0 1440,0 1440,16 0,80" fill="#060606"/></svg>
-  </div>
-
-  <!-- ══ MANIFESTE ══ -->
-  <section id="manifeste" class="s-light" style="overflow:hidden;padding:clamp(80px,10vw,140px) clamp(20px,4vw,72px);">
-    <div style="max-width:1400px;margin:0 auto;position:relative;">
-
-      <!-- Label -->
-      <p class="rv" style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.3);margin-bottom:clamp(40px,6vw,80px);">Manifeste</p>
-
-      <!-- Kinetic lines -->
-      <div style="display:flex;flex-direction:column;gap:0;">
-
-        <!-- Line 1 — filled dark -->
-        <div class="mf-wrap">
-          <p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(52px,9vw,148px);line-height:.95;letter-spacing:-.04em;color:#0C0C0C;transition-delay:.05s;">Acquisition.</p>
-        </div>
-
-        <!-- Line 2 — outline ghost -->
-        <div class="mf-wrap">
-          <p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(52px,9vw,148px);line-height:.95;letter-spacing:-.04em;-webkit-text-stroke:2px rgba(0,0,0,.15);color:transparent;transition-delay:.15s;">Référencement.</p>
-        </div>
-
-        <!-- Line 3 — muted fill -->
-        <div class="mf-wrap">
-          <p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(52px,9vw,148px);line-height:.95;letter-spacing:-.04em;color:rgba(0,0,0,.12);transition-delay:.26s;">Automatisation.</p>
-        </div>
-
-        <!-- Chips row -->
-        <div class="mf-wrap" style="overflow:visible;">
-          <div class="mf-line" style="padding:clamp(20px,2.5vw,36px) 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;transition-delay:.36s;">
-            <span style="padding:8px 18px;border:1px solid rgba(0,0,0,.1);border-radius:100px;font-size:13px;font-weight:500;color:rgba(0,0,0,.45);">Google Ads · Meta Ads · GTM</span>
-            <span style="padding:8px 18px;border:1px solid rgba(0,0,0,.1);border-radius:100px;font-size:13px;font-weight:500;color:rgba(0,0,0,.45);">SEO · GSC · Semrush</span>
-            <span style="padding:8px 18px;border:1px solid rgba(0,0,0,.1);border-radius:100px;font-size:13px;font-weight:500;color:rgba(0,0,0,.45);">Make · n8n · GPTs</span>
-            <span style="padding:8px 18px;border:1px solid rgba(0,0,0,.1);border-radius:100px;font-size:13px;font-weight:500;color:rgba(0,0,0,.45);">Looker Studio · GA4</span>
-          </div>
-        </div>
-
-        <!-- Line 4 — dark again, full contrast -->
-        <div class="mf-wrap">
-          <p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(52px,9vw,148px);line-height:.95;letter-spacing:-.04em;color:#0C0C0C;transition-delay:.46s;">IA &amp; Data.</p>
-        </div>
-
-        <!-- Line 5 — accent blue, smaller -->
-        <div class="mf-wrap">
-          <p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(28px,4vw,64px);line-height:1.3;letter-spacing:-.03em;color:var(--blue);margin-top:clamp(12px,2vw,24px);transition-delay:.58s;">Tout mesurer. Tout améliorer.</p>
-        </div>
-
-      </div>
-
-      <!-- Supporting text -->
-      <p class="rv" style="margin-top:clamp(40px,5vw,72px);font-size:clamp(15px,1.2vw,18px);font-weight:300;max-width:560px;line-height:1.8;color:rgba(0,0,0,.45);">
-        Six expériences, cinq secteurs, un fil rouge — comprendre comment les systèmes fonctionnent, les optimiser, et mesurer l'impact à chaque étape.
+    <div class="clip-wrap" style="margin-top:28px;">
+      <p class="clip-in ci4" style="font-size:clamp(14px,1.3vw,18px);color:rgba(255,255,255,.38);font-weight:300;max-width:440px;line-height:1.75;">
+        Marketing Digital — Google Ads · SEO · Automatisation · IA
       </p>
-
     </div>
-  </section>
 
-  <style>
-    .mf-wrap { overflow:hidden; }
-    .mf-line { transform:translateY(110%);opacity:0;transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .6s ease; }
-    .mf-line.on { transform:translateY(0);opacity:1; }
-  </style>
-  <script>
-    (function(){
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
-      },{ threshold:.15 });
-      document.querySelectorAll('.mf-wrap').forEach(wrap => {
-        const line = wrap.querySelector('.mf-line');
-        if(!line) return;
-        const o2 = new IntersectionObserver(entries => {
-          entries.forEach(e => { if(e.isIntersecting){ line.classList.add('on'); o2.unobserve(wrap); } });
-        },{ threshold:.1 });
-        o2.observe(wrap);
-      });
-    })();
-  </script>
-
-  <!-- ── Transition light→dark ── -->
-  <div aria-hidden="true" style="display:block;background:var(--ink);height:80px;overflow:hidden;line-height:0;font-size:0;margin:0;padding:0;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;width:100%;height:80px;"><polygon points="0,0 1440,0 1440,80 0,16" fill="#F0EDE8"/></svg>
-  </div>
-
-  <!-- ══ EXPÉRIENCES ══ -->
-  <section id="experiences" style="background:var(--ink);padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px);">
-    <div style="max-width:1400px;margin:0 auto;">
-
-      <div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:56px;">
-        <div>
-          <p style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px;">Expériences</p>
-          <h2 class="section-title" style="color:white;">Ce que j'ai<br><span style="color:rgba(255,255,255,.18);">construit</span></h2>
-        </div>
-        <p style="font-size:14px;max-width:340px;line-height:1.7;color:rgba(255,255,255,.35);">
-          Chaque expérience présentée avec ce qu'elle prouve — pas ce qu'elle était censée m'apprendre.<br><span style="font-size:12px;color:rgba(255,255,255,.22);margin-top:6px;display:block;">Cliquez pour voir tous les détails.</span>
-        </p>
-      </div>
-
-      <!-- Cards generated by JS -->
-      <div class="exp-grid rv" id="exp-grid"></div>
-
-    </div>
-  </section>
-
-  <!-- ── Transition dark→light ── -->
-  <div aria-hidden="true" style="display:block;background:var(--paper);height:80px;overflow:hidden;line-height:0;font-size:0;margin:0;padding:0;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;width:100%;height:80px;"><polygon points="0,0 1440,0 1440,16 0,80" fill="#060606"/></svg>
-  </div>
-
-  <!-- ══ SAVOIR-FAIRE ══ -->
-  <section id="savoir-faire" class="s-light" style="padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px);">
-    <div style="max-width:1400px;margin:0 auto;">
-
-      <div class="rv" style="margin-bottom:64px;">
-        <p style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.3);margin-bottom:16px;">Savoir-faire</p>
-        <h2 class="section-title">Ce que je sais<br><span style="color:rgba(0,0,0,.15);">vraiment faire</span></h2>
-        <p style="font-size:15px;line-height:1.7;color:rgba(0,0,0,.45);margin-top:20px;max-width:520px;">Pas des intitulés de poste — des compétences prouvées par des situations réelles.</p>
-      </div>
-
-      <!-- Interactive split layout: list left / detail right -->
-      <div id="sk-split" style="display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,6vw,96px);align-items:start;">
-
-        <!-- Left: skill selector list -->
-        <div id="sk-list" style="border-top:1px solid rgba(0,0,0,.09);">
-          <div class="sk-item sk-active" data-sk="0" onclick="setSkill(0)">
-            <span class="ski-num">01</span>
-            <span class="ski-title">Piloter une campagne acquisition de A à Z</span>
-            <span class="ski-arr">→</span>
-          </div>
-          <div class="sk-item" data-sk="1" onclick="setSkill(1)">
-            <span class="ski-num">02</span>
-            <span class="ski-title">Optimiser un site pour le référencement</span>
-            <span class="ski-arr">→</span>
-          </div>
-          <div class="sk-item" data-sk="2" onclick="setSkill(2)">
-            <span class="ski-num">03</span>
-            <span class="ski-title">Automatiser ce qui mérite de l'être</span>
-            <span class="ski-arr">→</span>
-          </div>
-          <div class="sk-item" data-sk="3" onclick="setSkill(3)">
-            <span class="ski-num">04</span>
-            <span class="ski-title">Lire des données et prendre des décisions</span>
-            <span class="ski-arr">→</span>
-          </div>
-          <div class="sk-item" data-sk="4" onclick="setSkill(4)">
-            <span class="ski-num">05</span>
-            <span class="ski-title">Communiquer avec cohérence et précision</span>
-            <span class="ski-arr">→</span>
-          </div>
-          <div class="sk-item" data-sk="5" onclick="setSkill(5)">
-            <span class="ski-num">06</span>
-            <span class="ski-title">Apprendre et s'adapter plus vite que la norme</span>
-            <span class="ski-arr">→</span>
-          </div>
-        </div>
-
-        <!-- Right: detail panel (sticky) -->
-        <div style="position:sticky;top:clamp(80px,10vw,120px);">
-          <div id="sk-detail" style="transition:opacity .22s ease,transform .22s ease;">
-            <div id="sk-d-num" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(72px,10vw,120px);color:rgba(0,0,0,.05);letter-spacing:-.06em;line-height:1;margin-bottom:12px;user-select:none;">01</div>
-            <div style="width:32px;height:3px;background:linear-gradient(90deg,var(--blue),#7C3AED);border-radius:2px;margin-bottom:20px;"></div>
-            <h3 id="sk-d-title" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,28px);color:#0C0C0C;letter-spacing:-.03em;line-height:1.25;margin-bottom:16px;">Piloter une campagne acquisition de A à Z</h3>
-            <p id="sk-d-desc" style="font-size:14px;line-height:1.85;color:rgba(0,0,0,.5);margin-bottom:24px;">Stratégie, structure, annonces, GTM, suivi des conversions, analyse. Sur plusieurs clients simultanément. Google Ads n'est pas un outil à configurer une fois — c'est un système vivant.</p>
-            <ul id="sk-d-list" style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-              <li style="font-size:13px;color:rgba(0,0,0,.55);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--blue);font-weight:600;flex-shrink:0;">→</span>Search + Performance Max multi-clients</li>
-              <li style="font-size:13px;color:rgba(0,0,0,.55);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--blue);font-weight:600;flex-shrink:0;">→</span>~500 € de budget géré / client / mois</li>
-              <li style="font-size:13px;color:rgba(0,0,0,.55);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--blue);font-weight:600;flex-shrink:0;">→</span>Configuration des conversions via GTM</li>
-              <li style="font-size:13px;color:rgba(0,0,0,.55);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--blue);font-weight:600;flex-shrink:0;">→</span>Reporting Looker Studio en autonomie</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .sk-item {
-      display:grid;grid-template-columns:36px 1fr 20px;gap:16px;align-items:center;
-      padding:18px 0 18px 12px;border-bottom:1px solid rgba(0,0,0,.07);
-      cursor:pointer;position:relative;
-      transition:padding-left .2s ease;
-    }
-    .sk-item::before {
-      content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-      background:linear-gradient(180deg,var(--blue),#7C3AED);
-      transform:scaleY(0);transform-origin:bottom;
-      transition:transform .25s cubic-bezier(.16,1,.3,1);
-    }
-    .sk-item:hover::before, .sk-item.sk-active::before { transform:scaleY(1); }
-    .sk-item:hover, .sk-item.sk-active { padding-left:20px; }
-    .ski-num { font-size:10px;font-weight:700;letter-spacing:.15em;color:rgba(0,0,0,.25);transition:color .2s; }
-    .ski-title { font-size:clamp(14px,1.1vw,16px);font-weight:500;color:rgba(0,0,0,.55);line-height:1.35;transition:color .2s,font-weight .1s; }
-    .ski-arr { font-size:14px;color:rgba(0,0,0,.15);transition:color .2s,transform .2s;text-align:right; }
-    .sk-item:hover .ski-num, .sk-item.sk-active .ski-num { color:var(--blue); }
-    .sk-item:hover .ski-title, .sk-item.sk-active .ski-title { color:#0C0C0C;font-weight:600; }
-    .sk-item:hover .ski-arr, .sk-item.sk-active .ski-arr { color:var(--blue);transform:translateX(4px); }
-    @media(max-width:760px){ #sk-split { grid-template-columns:1fr !important; } #sk-split > div:last-child { position:static !important; } }
-  </style>
-
-  <script>
-    const SK_DATA = [
-      { num:'01', title:'Piloter une campagne acquisition de A à Z', desc:"Stratégie, structure, annonces, GTM, suivi des conversions, analyse. Sur plusieurs clients simultanément. Google Ads n'est pas un outil à configurer une fois — c'est un système vivant.", items:['Search + Performance Max multi-clients','~500 € de budget géré / client / mois','Configuration des conversions via GTM','Reporting Looker Studio en autonomie'] },
-      { num:'02', title:'Optimiser un site pour le référencement', desc:"SEO technique et éditorial : audits de crawl, vitesse, rédaction optimisée, structure de silos, balises. Le SEO n'est pas une checklist — c'est une compréhension des moteurs.", items:['Audits techniques complets (vitesse, crawl)','Rédaction SEO + pages catégories','GSC · Semrush · Screaming Frog hebdo','Optimisation PageSpeed / Core Web Vitals'] },
-      { num:'03', title:"Automatiser ce qui mérite de l'être", desc:"Identifier une tâche répétitive, construire le workflow qui la supprime. Reporting auto, Slack, GPTs pour la cohérence de marque. C'est du temps récupéré pour ce qui demande un vrai jugement.", items:['Stats agrégées + envoi Slack automatique','GPTs custom à voix de marque constante','Prompts structurés et réutilisables','Make · Zapier · n8n selon le contexte'] },
-      { num:'04', title:'Lire des données et prendre des décisions', desc:'La donnée ne parle pas seule. Il faut choisir quoi suivre, construire les vues, et en tirer une action. Dashboards configurés, exports transformés en décisions concrètes.', items:['Dashboards Looker Studio multi-clients','Suivi GSC · GA4 en routine hebdo','Analyse comparative avant/après optim.'] },
-      { num:'05', title:'Communiquer avec cohérence et précision', desc:'Post social, article SEO, flyer print, script — chaque format a ses règles. Ce qui ne change pas : la clarté et le ton. Voltaire 772/1000 · TOEIC 725/990 · 3 mois Malte.', items:['Contenus multiformat : web, print, script','Stratégie de marque (La Manufacture)','Voix de marque via IA (Wisy)','Anglais en environnement luxe'] },
-      { num:'06', title:"Apprendre et s'adapter plus vite que la norme", desc:"Veille IA quotidienne, chaque outil testé à sa sortie. La rapidité d'apprentissage augmentée par l'IA est ma vraie compétence différenciante en 2025.", items:['Nouveaux outils maîtrisés en quelques jours','Veille : YouTube · formations · Perplexity','Tests hands-on de toutes les nouveautés IA','Micro-entreprise lancée à 18 ans seul'] }
-    ];
-    function setSkill(i){
-      const items = document.querySelectorAll('.sk-item');
-      const d = SK_DATA[i];
-
-      if(window.innerWidth < 760){
-        /* ── Mobile: accordion inline ── */
-        const clicked = items[i];
-        const isActive = clicked.classList.contains('sk-active');
-
-        /* Collapse all */
-        items.forEach(el => {
-          el.classList.remove('sk-active');
-          const exp = el.querySelector('.sk-acc');
-          if(exp){ exp.style.maxHeight='0'; exp.style.opacity='0'; setTimeout(()=>exp.remove(),280); }
-        });
-
-        if(isActive) return; /* toggle off if same item */
-
-        clicked.classList.add('sk-active');
-        const acc = document.createElement('div');
-        acc.className = 'sk-acc';
-        acc.style.cssText = 'grid-column:1/-1;overflow:hidden;max-height:0;opacity:0;transition:max-height .4s cubic-bezier(.16,1,.3,1),opacity .3s ease;';
-        acc.innerHTML = `<div style="padding:16px 0 20px;border-top:1px solid rgba(0,0,0,.07);margin-top:4px;">
-          <p style="font-size:13px;line-height:1.8;color:rgba(0,0,0,.5);margin-bottom:14px;">${d.desc}</p>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
-            ${d.items.map(it=>`<li style="font-size:12px;color:rgba(0,0,0,.55);display:flex;align-items:baseline;gap:8px;"><span style="color:var(--blue);font-weight:600;flex-shrink:0;">→</span>${it}</li>`).join('')}
-          </ul></div>`;
-        clicked.appendChild(acc);
-        requestAnimationFrame(()=>requestAnimationFrame(()=>{
-          acc.style.maxHeight='600px'; acc.style.opacity='1';
-        }));
-        return;
-      }
-
-      /* ── Desktop: sticky panel ── */
-      const det = document.getElementById('sk-detail');
-      det.style.opacity='0'; det.style.transform='translateY(10px)';
-      setTimeout(() => {
-        document.getElementById('sk-d-num').textContent = d.num;
-        document.getElementById('sk-d-title').textContent = d.title;
-        document.getElementById('sk-d-desc').textContent = d.desc;
-        document.getElementById('sk-d-list').innerHTML = d.items.map(it =>
-          `<li style="font-size:13px;color:rgba(0,0,0,.55);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--blue);font-weight:600;flex-shrink:0;">→</span>${it}</li>`
-        ).join('');
-        det.style.opacity='1'; det.style.transform='translateY(0)';
-      }, 180);
-      items.forEach((el,j) => el.classList.toggle('sk-active', j===i));
-    }
-  </script>
-
-  <!-- ── Transition light→dark ── -->
-  <div aria-hidden="true" style="display:block;background:var(--ink);height:80px;overflow:hidden;line-height:0;font-size:0;margin:0;padding:0;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;width:100%;height:80px;"><polygon points="0,0 1440,0 1440,80 0,16" fill="#F0EDE8"/></svg>
-  </div>
-
-  <!-- ══ OUTILS ══ -->
-  <section id="outils" style="background:var(--ink);padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px) 0;">
-    <div style="max-width:1400px;margin:0 auto;padding-bottom:clamp(60px,8vw,100px);">
-
-      <!-- Header -->
-      <div class="rv" style="margin-bottom:56px;">
-        <p style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px;">Stack &amp; Outils</p>
-        <h2 class="section-title" style="color:white;">L'arsenal<br><span style="color:rgba(255,255,255,.18);">du quotidien</span></h2>
-      </div>
-
-      <!-- ── IA & Veille ── -->
-      <div id="tc-wrap" style="padding-top:56px;border-top:1px solid rgba(255,255,255,.06);padding-bottom:64px;">
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:start;" id="ia-veille-grid">
-
-          <!-- Colonne gauche : 4 modèles -->
-          <div>
-            <p style="font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:12px;">IA généraliste</p>
-            <p style="font-size:clamp(14px,1.3vw,17px);color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:36px;">Pas de favori fixe — le bon modèle selon la tâche.</p>
-
-            <div id="tool-rows">
-              <div class="tool-row" style="padding:16px 12px;border-radius:10px;cursor:default;transition:background .2s;margin:0 -12px;">
-                <div style="display:flex;align-items:center;gap:14px;">
-                  <span class="tr-num" style="font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--blue);min-width:20px;transition:opacity .2s;">01</span>
-                  <span class="tr-name" style="font-size:clamp(17px,1.8vw,22px);font-weight:700;color:white;transition:transform .25s;">Claude</span>
-                </div>
-              </div>
-              <div style="height:1px;background:rgba(255,255,255,.05);margin:0 12px;"></div>
-              <div class="tool-row" style="padding:16px 12px;border-radius:10px;cursor:default;transition:background .2s;margin:0 -12px;">
-                <div style="display:flex;align-items:center;gap:14px;">
-                  <span class="tr-num" style="font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--blue);min-width:20px;transition:opacity .2s;">02</span>
-                  <span class="tr-name" style="font-size:clamp(17px,1.8vw,22px);font-weight:700;color:rgba(255,255,255,.75);transition:transform .25s;">ChatGPT</span>
-                </div>
-              </div>
-              <div style="height:1px;background:rgba(255,255,255,.05);margin:0 12px;"></div>
-              <div class="tool-row" style="padding:16px 12px;border-radius:10px;cursor:default;transition:background .2s;margin:0 -12px;">
-                <div style="display:flex;align-items:center;gap:14px;">
-                  <span class="tr-num" style="font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--blue);min-width:20px;transition:opacity .2s;">03</span>
-                  <span class="tr-name" style="font-size:clamp(17px,1.8vw,22px);font-weight:700;color:rgba(255,255,255,.6);transition:transform .25s;">Perplexity</span>
-                </div>
-              </div>
-              <div style="height:1px;background:rgba(255,255,255,.05);margin:0 12px;"></div>
-              <div class="tool-row" style="padding:16px 12px;border-radius:10px;cursor:default;transition:background .2s;margin:0 -12px;">
-                <div style="display:flex;align-items:center;gap:14px;">
-                  <span class="tr-num" style="font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--blue);min-width:20px;transition:opacity .2s;">04</span>
-                  <span class="tr-name" style="font-size:clamp(17px,1.8vw,22px);font-weight:700;color:rgba(255,255,255,.38);transition:transform .25s;">Gemini</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Colonne droite : Veille + grand chiffre décoratif -->
-          <div style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
-            <div>
-              <p style="font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:12px;">Veille</p>
-              <p style="font-size:clamp(18px,2vw,26px);font-weight:600;color:white;line-height:1.45;margin-bottom:20px;">Débrief IA<br>chaque matin.</p>
-              <p style="font-size:clamp(14px,1.3vw,16px);color:rgba(255,255,255,.4);line-height:1.75;margin-bottom:32px;">Un prompt automatisé synthétise l'actu de la veille — tendances, signaux faibles, secteur. Condensé en 3 minutes. Pour aller en profondeur : YouTube.</p>
-              <div style="display:flex;align-items:center;gap:10px;">
-                <span style="width:28px;height:1px;background:rgba(255,255,255,.15);display:inline-block;"></span>
-                <span style="font-size:12px;color:rgba(255,255,255,.3);">Automatisé · quotidien · 3 min</span>
-              </div>
-            </div>
-            <!-- Chiffre décoratif en bas -->
-            <div style="margin-top:40px;">
-              <p style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(64px,10vw,120px);color:rgba(255,255,255,.04);letter-spacing:-.06em;line-height:1;user-select:none;">IA</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-    <div style="border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);overflow:hidden;margin-top:clamp(60px,8vw,100px);">
-      <div class="mq-track" style="padding:18px 0;" aria-hidden="true">
-        <span class="mq-item" style="font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);">
-          <span>Google Ads</span><span style="opacity:.3;">·</span><span>SEO Technique</span><span style="opacity:.3;">·</span><span>Make</span><span style="opacity:.3;">·</span><span>Claude AI</span><span style="opacity:.3;">·</span><span>Looker Studio</span><span style="opacity:.3;">·</span><span>GA4</span><span style="opacity:.3;">·</span><span>Semrush</span><span style="opacity:.3;">·</span><span>n8n</span><span style="opacity:.3;">·</span><span>Meta Ads</span><span style="opacity:.3;">·</span><span>Midjourney</span><span style="opacity:.3;">·</span><span>Screaming Frog</span><span style="opacity:.3;">·</span><span>GTM</span><span style="opacity:.3;">·</span><span>Zapier</span><span style="opacity:.3;">·</span><span>ElevenLabs</span><span style="opacity:.3;">·</span>
+    <div class="clip-wrap" style="margin-top:36px;">
+      <div class="clip-in ci5" style="display:flex;align-items:center;gap:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);">
+        <span style="display:flex;align-items:center;gap:7px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite;display:inline-block;flex-shrink:0;"></span>
+          <span style="font-size:12px;font-weight:500;color:rgba(255,255,255,.55);">Disponible dès 2027</span>
         </span>
-        <span class="mq-item" style="font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.18);" aria-hidden="true">
-          <span>Google Ads</span><span style="opacity:.3;">·</span><span>SEO Technique</span><span style="opacity:.3;">·</span><span>Make</span><span style="opacity:.3;">·</span><span>Claude AI</span><span style="opacity:.3;">·</span><span>Looker Studio</span><span style="opacity:.3;">·</span><span>GA4</span><span style="opacity:.3;">·</span><span>Semrush</span><span style="opacity:.3;">·</span><span>n8n</span><span style="opacity:.3;">·</span><span>Meta Ads</span><span style="opacity:.3;">·</span><span>Midjourney</span><span style="opacity:.3;">·</span><span>Screaming Frog</span><span style="opacity:.3;">·</span><span>GTM</span><span style="opacity:.3;">·</span><span>Zapier</span><span style="opacity:.3;">·</span><span>ElevenLabs</span><span style="opacity:.3;">·</span>
-        </span>
+        <span style="width:1px;height:14px;background:rgba(255,255,255,.1);"></span>
+        <span style="font-size:12px;color:rgba(255,255,255,.25);">MBA Strat. Digitale</span>
+        <span style="width:1px;height:14px;background:rgba(255,255,255,.1);display:inline-block;" class="hero-sep"></span>
+        <span style="font-size:12px;color:rgba(255,255,255,.25);" class="hero-sep">CrazyEight · Limoges</span>
       </div>
     </div>
-  </section>
 
-  <!-- ── Transition dark→light ── -->
-  <div aria-hidden="true" style="display:block;background:var(--paper);height:80px;overflow:hidden;line-height:0;font-size:0;margin:0;padding:0;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;width:100%;height:80px;"><polygon points="0,0 1440,0 1440,16 0,80" fill="#060606"/></svg>
+    <div style="margin-top:56px;">
+      <div style="display:inline-flex;flex-direction:column;align-items:center;gap:7px;color:rgba(255,255,255,.18);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:bounceY 2s ease-in-out infinite;"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        <span style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;">Scroll</span>
+      </div>
+    </div>
   </div>
 
-  <!-- ══ FORMATION ══ -->
-  <section id="formation" class="s-light" style="padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px);">
-    <div style="max-width:1400px;margin:0 auto;">
-
-      <!-- Header -->
-      <div class="rv" style="margin-bottom:72px;">
-        <p style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.3);margin-bottom:16px;">Formation</p>
-        <h2 class="section-title">D'où<br><span style="color:rgba(0,0,0,.12);">je viens</span></h2>
-        <p style="font-size:15px;line-height:1.7;color:rgba(0,0,0,.45);margin-top:20px;max-width:520px;">Un parcours construit autour d'une conviction simple : le terrain avant les diplômes.</p>
-      </div>
-
-      <!-- Horizontal frise timeline -->
-      <div id="fm-timeline" style="margin-bottom:80px;">
-
-        <!-- Years row — centered in each column -->
-        <div id="fm-year-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;margin-bottom:0;">
-          <div style="display:flex;flex-direction:column;align-items:center;padding-bottom:20px;">
-            <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(36px,4.5vw,60px);color:#0C0C0C;letter-spacing:-.05em;line-height:1;">2025</span>
-            <span style="font-size:11px;color:rgba(0,0,0,.3);margin-top:5px;">→ 2027</span>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:center;padding-bottom:20px;">
-            <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(36px,4.5vw,60px);color:rgba(0,0,0,.45);letter-spacing:-.05em;line-height:1;">2022</span>
-            <span style="font-size:11px;color:rgba(0,0,0,.25);margin-top:5px;">→ 2025</span>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:center;padding-bottom:20px;">
-            <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(36px,4.5vw,60px);color:rgba(0,0,0,.22);letter-spacing:-.05em;line-height:1;">2019</span>
-            <span style="font-size:11px;color:rgba(0,0,0,.18);margin-top:5px;">→ 2022</span>
-          </div>
+  <!-- Carousel -->
+  <div id="hero-carousel" aria-hidden="true">
+    <div class="hc-col">
+      <div class="hc-track" style="animation-duration:40s;">
+        <div class="hc-strip">
+          <div class="hc-card"><img src="images/google-ads-crazy-eight.png" alt="Google Ads" loading="lazy"><span class="hc-label">CrazyEight · Google Ads</span></div>
+          <div class="hc-card"><img src="images/audit-seo-perso.png" alt="Audit SEO" loading="lazy"><span class="hc-label">Perso · Audit SEO</span></div>
+          <div class="hc-card"><img src="images/posts-vintage-wisy.png" alt="Posts Wisy" loading="lazy"><span class="hc-label">Wisy · Posts</span></div>
+          <div class="hc-card"><img src="images/formation-ia-perso.png" alt="Formation IA" loading="lazy"><span class="hc-label">Formation IA</span></div>
+          <div class="hc-card"><img src="images/data-campagne-30-jours.png" alt="Data" loading="lazy"><span class="hc-label">Campagne 30j</span></div>
+          <div class="hc-card"><img src="images/mon-notion-perso.png" alt="Notion" loading="lazy"><span class="hc-label">Notion</span></div>
+          <div class="hc-card"><img src="images/affiche-perso.png" alt="Affiche" loading="lazy"><span class="hc-label">Affiche</span></div>
+          <div class="hc-card"><img src="images/planning-crazy-eight.png" alt="Planning" loading="lazy"><span class="hc-label">Planning</span></div>
         </div>
-
-        <!-- Line rail + 3 dots -->
-        <div id="fm-rail-row" style="position:relative;height:36px;">
-          <!-- Track container inset to match dot centers -->
-          <div style="position:absolute;top:50%;left:calc(100%/6);right:calc(100%/6);height:2px;background:rgba(0,0,0,.08);transform:translateY(-50%);border-radius:2px;overflow:hidden;">
-            <div id="fm-line" style="width:0;height:100%;background:linear-gradient(90deg,var(--blue),#7C3AED);transition:width 1.4s cubic-bezier(.16,1,.3,1);"></div>
-          </div>
-          <!-- Dot 1 — col 1 center -->
-          <div id="fmd1" style="position:absolute;left:calc(100%/6);top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:var(--paper);border:2.5px solid rgba(0,0,0,.12);z-index:2;transition:border-color .4s,background .4s,box-shadow .4s;"></div>
-          <!-- Dot 2 — col 2 center -->
-          <div id="fmd2" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:var(--paper);border:2.5px solid rgba(0,0,0,.12);z-index:2;transition:border-color .4s,background .4s,box-shadow .4s;"></div>
-          <!-- Dot 3 — col 3 center -->
-          <div id="fmd3" style="position:absolute;left:calc(100%*5/6);top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:var(--paper);border:2.5px solid rgba(0,0,0,.12);z-index:2;transition:border-color .4s,background .4s,box-shadow .4s;"></div>
-        </div>
-
-        <!-- Content blocks — centered under each dot, no card borders -->
-        <div id="fm-content-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:32px;gap:24px;">
-
-          <!-- Block 1: MBA -->
-          <div id="fmc1" style="opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;">
-            <span class="fm-mob-yr">2025 <span style="font-size:11px;opacity:.5;">→ 2027</span></span>
-            <!-- Tick connector from dot to content -->
-            <div class="fm-tick" style="width:1px;height:20px;background:rgba(0,0,0,.12);margin-bottom:20px;flex-shrink:0;"></div>
-            <p style="font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:rgba(0,0,0,.3);margin-bottom:10px;">Studi · Alternance CrazyEight</p>
-            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);color:#0C0C0C;letter-spacing:-.025em;line-height:1.25;margin-bottom:10px;">MBA Stratégie Digitale</h3>
-            <p style="font-size:12px;line-height:1.75;color:rgba(0,0,0,.45);">Marketing digital, Communication, Transformation numérique, Gestion de projet.</p>
-            <div style="display:flex;gap:6px;margin-top:16px;flex-wrap:wrap;justify-content:center;">
-              <span class="b b-gn-lt" style="font-size:10px;"><span style="width:5px;height:5px;border-radius:50%;background:#16a34a;display:inline-block;animation:pulse 2s infinite;margin-right:4px;vertical-align:middle;"></span>En cours</span>
-              <span class="b b-lt" style="font-size:10px;">Niveau 7</span>
-            </div>
-          </div>
-
-          <!-- Block 2: Bachelor -->
-          <div id="fmc2" style="opacity:0;transform:translateY(20px);transition:opacity .5s ease .5s,transform .5s cubic-bezier(.16,1,.3,1) .5s;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;">
-            <span class="fm-mob-yr">2022 <span style="font-size:11px;opacity:.5;">→ 2025</span></span>
-            <div class="fm-tick" style="width:1px;height:20px;background:rgba(0,0,0,.12);margin-bottom:20px;flex-shrink:0;"></div>
-            <p style="font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:rgba(0,0,0,.3);margin-bottom:10px;">EGC Business School · Brive</p>
-            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);color:#0C0C0C;letter-spacing:-.025em;line-height:1.25;margin-bottom:10px;">Bachelor Commerce &amp; Marketing</h3>
-            <p style="font-size:12px;line-height:1.75;color:rgba(0,0,0,.45);">Marketing, Management, Commerce, Gestion. Terrain chaque semestre.</p>
-            <div style="display:flex;gap:6px;margin-top:16px;flex-wrap:wrap;justify-content:center;">
-              <span class="b b-lt" style="font-size:10px;">BAC+3</span>
-            </div>
-          </div>
-
-          <!-- Block 3: Bac -->
-          <div id="fmc3" style="opacity:0;transform:translateY(20px);transition:opacity .5s ease 1s,transform .5s cubic-bezier(.16,1,.3,1) 1s;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;">
-            <span class="fm-mob-yr">2019 <span style="font-size:11px;opacity:.5;">→ 2022</span></span>
-            <div class="fm-tick" style="width:1px;height:20px;background:rgba(0,0,0,.12);margin-bottom:20px;flex-shrink:0;"></div>
-            <p style="font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:rgba(0,0,0,.3);margin-bottom:10px;">Lycée Raoul Dautry · Limoges</p>
-            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);color:#0C0C0C;letter-spacing:-.025em;line-height:1.25;margin-bottom:10px;">Baccalauréat</h3>
-            <p style="font-size:12px;line-height:1.75;color:rgba(0,0,0,.45);">Sciences de l'Ingénieur, NSI, Mathématiques. Base technique, aisance naturelle avec les outils numériques.</p>
-            <div style="display:flex;gap:6px;margin-top:16px;flex-wrap:wrap;justify-content:center;">
-              <span class="b b-lt" style="font-size:10px;">Mention AB</span>
-            </div>
-          </div>
-
+        <div class="hc-strip" aria-hidden="true">
+          <div class="hc-card"><img src="images/google-ads-crazy-eight.png" alt="" loading="lazy"><span class="hc-label">CrazyEight · Google Ads</span></div>
+          <div class="hc-card"><img src="images/audit-seo-perso.png" alt="" loading="lazy"><span class="hc-label">Perso · Audit SEO</span></div>
+          <div class="hc-card"><img src="images/posts-vintage-wisy.png" alt="" loading="lazy"><span class="hc-label">Wisy · Posts</span></div>
+          <div class="hc-card"><img src="images/formation-ia-perso.png" alt="" loading="lazy"><span class="hc-label">Formation IA</span></div>
+          <div class="hc-card"><img src="images/data-campagne-30-jours.png" alt="" loading="lazy"><span class="hc-label">Campagne 30j</span></div>
+          <div class="hc-card"><img src="images/mon-notion-perso.png" alt="" loading="lazy"><span class="hc-label">Notion</span></div>
+          <div class="hc-card"><img src="images/affiche-perso.png" alt="" loading="lazy"><span class="hc-label">Affiche</span></div>
+          <div class="hc-card"><img src="images/planning-crazy-eight.png" alt="" loading="lazy"><span class="hc-label">Planning</span></div>
         </div>
       </div>
-
-      <!-- Language stats -->
-      <div class="rv" style="margin-bottom:28px;">
-        <p style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.25);">Langues</p>
-      </div>
-      <div id="lang-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:64px;">
-        <div class="rv" style="background:white;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:28px 32px;box-shadow:0 2px 16px rgba(0,0,0,.04);">
-          <p style="font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(0,0,0,.3);margin-bottom:16px;">Français</p>
-          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:8px;">
-            <span class="fm-score" data-target="772" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);color:#0C0C0C;letter-spacing:-.04em;line-height:1;">0</span>
-            <span style="font-size:16px;color:rgba(0,0,0,.25);font-weight:600;">/ 1000</span>
-          </div>
-          <p style="font-size:12px;color:rgba(0,0,0,.4);">Langue maternelle · Certificat Voltaire</p>
-        </div>
-        <div class="rv rv1" style="background:white;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:28px 32px;box-shadow:0 2px 16px rgba(0,0,0,.04);">
-          <p style="font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(0,0,0,.3);margin-bottom:16px;">Anglais</p>
-          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:8px;">
-            <span class="fm-score" data-target="725" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);color:#0C0C0C;letter-spacing:-.04em;line-height:1;">0</span>
-            <span style="font-size:16px;color:rgba(0,0,0,.25);font-weight:600;">/ 990</span>
-          </div>
-          <p style="font-size:12px;color:rgba(0,0,0,.4);">Professionnel · TOEIC · 3 mois immersion Malte</p>
-        </div>
-        <div class="rv rv2" style="background:white;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:28px 32px;box-shadow:0 2px 16px rgba(0,0,0,.04);">
-          <p style="font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(0,0,0,.3);margin-bottom:16px;">Espagnol</p>
-          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:8px;">
-            <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);color:#0C0C0C;letter-spacing:-.04em;line-height:1;">B1</span>
-          </div>
-          <p style="font-size:12px;color:rgba(0,0,0,.4);">Niveau B1 · Scolaire</p>
-        </div>
-      </div>
-
-      <!-- Tools -->
-      <div class="rv" style="margin-bottom:28px;">
-        <p style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.25);">Outils maîtrisés</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
-        <div style="background:white;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,.04);" class="rv">
-          <p style="font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.3);margin-bottom:14px;">Marketing &amp; Ads</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="b b-lt">Google Ads (Search, PMax)</span><span class="b b-lt">Meta Ads</span><span class="b b-lt">GTM</span><span class="b b-lt">Looker Studio</span><span class="b b-lt">GA4</span><span class="b b-lt">Search Console</span></div>
-        </div>
-        <div style="background:white;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,.04);" class="rv rv1">
-          <p style="font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.3);margin-bottom:14px;">SEO &amp; Data</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="b b-lt">Semrush</span><span class="b b-lt">SE Ranking</span><span class="b b-lt">Screaming Frog</span><span class="b b-lt">Excel / Sheets</span><span class="b b-lt">Notion</span><span class="b b-lt">WordPress / Wix</span></div>
-        </div>
-        <div style="background:white;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,.04);" class="rv rv2">
-          <p style="font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.3);margin-bottom:14px;">IA &amp; Automatisation</p>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="b b-lt">Claude · ChatGPT</span><span class="b b-lt">Perplexity</span><span class="b b-lt">Make · n8n · Zapier</span><span class="b b-lt">ElevenLabs · Gamma</span><span class="b b-lt">Canva · Midjourney</span></div>
-        </div>
-      </div>
-
     </div>
-  </section>
-
-  <script>
-    (function(){
-      /* Formation timeline: scroll-linked (reversible) */
-      (function(){
-        const tl = document.getElementById('fm-timeline');
-        const line = document.getElementById('fm-line');
-        if(!tl || !line) return;
-        const d1 = document.getElementById('fmd1');
-        const d2 = document.getElementById('fmd2');
-        const d3 = document.getElementById('fmd3');
-        const blue = 'var(--blue)', glow = '0 0 0 4px rgba(37,99,235,.18)';
-        const paper = 'var(--paper)', none = '';
-        let contentRevealed = false;
-
-        function setDot(el, active){
-          if(!el) return;
-          if(active){ el.style.borderColor=blue; el.style.background=blue; el.style.boxShadow=glow; }
-          else { el.style.borderColor=''; el.style.background=paper; el.style.boxShadow=none; }
-        }
-
-        function update(){
-          const rect = tl.getBoundingClientRect();
-          const vh = window.innerHeight;
-          /* progress: 0 when tl enters viewport bottom, 1 when tl top hits 30% vh */
-          const p = Math.max(0, Math.min(1, (vh - rect.top) / (vh * 0.75)));
-          line.style.transition = 'none';
-          line.style.width = (p * 100) + '%';
-          setDot(d1, p > 0.05);
-          setDot(d2, p > 0.5);
-          setDot(d3, p > 0.95);
-          /* content: reveal once, never hide */
-          if(!contentRevealed && p > 0.12){
-            contentRevealed = true;
-            ['fmc1','fmc2','fmc3'].forEach((id, i) => {
-              const c = document.getElementById(id);
-              if(c) setTimeout(() => { c.style.opacity='1'; c.style.transform='translateY(0)'; }, i * 180);
-            });
-          }
-        }
-        window.addEventListener('scroll', update, { passive: true });
-        update();
-      })();
-      /* Score count-up */
-      document.querySelectorAll('.fm-score').forEach(el => {
-        const target = parseInt(el.dataset.target,10);
-        const obs2 = new IntersectionObserver(entries => {
-          entries.forEach(e => {
-            if(!e.isIntersecting) return;
-            obs2.unobserve(el);
-            let start = 0, dur = 1200, t0 = null;
-            function step(ts){
-              if(!t0) t0=ts;
-              const p = Math.min((ts-t0)/dur,1);
-              el.textContent = Math.round(p*p*target);
-              if(p<1) requestAnimationFrame(step);
-              else el.textContent = target;
-            }
-            requestAnimationFrame(step);
-          });
-        },{ threshold:.5 });
-        obs2.observe(el);
-      });
-    })();
-  </script>
-
-  <script>
-    /* ── Tool rows reveal ── */
-    (function(){
-      const rows = document.querySelectorAll('.tool-row');
-      // Set initial state
-      rows.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(18px)';
-        el.style.transition = 'none';
-      });
-      const wrap = document.getElementById('tc-wrap');
-      if(!wrap) return;
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if(!e.isIntersecting) return;
-          obs.unobserve(wrap);
-          rows.forEach((el, i) => {
-            setTimeout(() => {
-              el.style.transition = 'opacity .55s ease, transform .65s cubic-bezier(.16,1,.3,1), background .2s';
-              el.style.opacity = '1';
-              el.style.transform = 'translateY(0)';
-            }, i * 100);
-          });
-        });
-      }, { threshold: 0.2 });
-      obs.observe(wrap);
-    })();
-  </script>
-
-  <!-- ── Transition light→dark ── -->
-  <div aria-hidden="true" style="display:block;background:var(--ink);height:80px;overflow:hidden;line-height:0;font-size:0;margin:0;padding:0;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;width:100%;height:80px;"><polygon points="0,0 1440,0 1440,80 0,16" fill="#F0EDE8"/></svg>
+    <div class="hc-col">
+      <div class="hc-track" style="animation-duration:58s;animation-delay:-20s;">
+        <div class="hc-strip">
+          <div class="hc-card"><img src="images/ticket-or-wisy.png" alt="Wisy" loading="lazy"><span class="hc-label">Wisy · Ticket d'or</span></div>
+          <div class="hc-card"><img src="images/banniere-perso.png" alt="Bannière" loading="lazy"><span class="hc-label">Bannière</span></div>
+          <div class="hc-card"><img src="images/carrousel-wisy.png" alt="Carrousel" loading="lazy"><span class="hc-label">Wisy · Carrousel</span></div>
+          <div class="hc-card"><img src="images/4-familles-wisy.png" alt="Jeu" loading="lazy"><span class="hc-label">Wisy · Jeu de cartes</span></div>
+          <div class="hc-card"><img src="images/mon-portfolio.png" alt="Portfolio" loading="lazy"><span class="hc-label">Portfolio</span></div>
+          <div class="hc-card"><img src="images/post-perso.png" alt="Post" loading="lazy"><span class="hc-label">Post</span></div>
+          <div class="hc-card"><img src="images/billet-avion-wisy.png" alt="Billet" loading="lazy"><span class="hc-label">Wisy · Billet</span></div>
+          <div class="hc-card"><img src="images/lhistoire-de.png" alt="Storytelling" loading="lazy"><span class="hc-label">Storytelling</span></div>
+        </div>
+        <div class="hc-strip" aria-hidden="true">
+          <div class="hc-card"><img src="images/ticket-or-wisy.png" alt="" loading="lazy"></div>
+          <div class="hc-card"><img src="images/banniere-perso.png" alt="" loading="lazy"></div>
+          <div class="hc-card"><img src="images/carrousel-wisy.png" alt="" loading="lazy"></div>
+          <div class="hc-card"><img src="images/4-familles-wisy.png" alt="" loading="lazy"></div>
+          <div class="hc-card"><img src="images/mon-portfolio.png" alt="" loading="lazy"></div>
+          <div class="hc-card"><img src="images/post-perso.png" alt="" loading="lazy"></div>
+          <div class="hc-card"><img src="images/billet-avion-wisy.png" alt="" loading="lazy"></div>
+          <div class="hc-card"><img src="images/lhistoire-de.png" alt="" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- ══ À PROPOS ══ -->
-  <section id="apropos" style="background:var(--ink);padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px);">
-    <div style="max-width:1400px;margin:0 auto;">
-
-      <!-- Header -->
-      <div class="rv" style="margin-bottom:56px;">
-        <p style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px;">À propos</p>
-        <h2 class="section-title" style="color:white;">Le reste<br><span style="color:rgba(255,255,255,.18);">de l'iceberg</span></h2>
-        <p style="font-size:clamp(17px,1.5vw,22px);font-weight:400;color:rgba(255,255,255,.35);margin-top:20px;line-height:1.5;">Assez parlé de moi.<br><span style="color:rgba(255,255,255,.65);">Parlons de moi.</span></p>
+  <!-- Ticker -->
+  <div style="position:absolute;bottom:0;left:0;right:0;border-top:1px solid rgba(255,255,255,.05);overflow:hidden;">
+    <div style="display:flex;width:max-content;animation:mq 30s linear infinite;">
+      <div style="display:flex;align-items:center;padding:12px 0;white-space:nowrap;font-size:11px;font-weight:500;letter-spacing:.05em;color:rgba(255,255,255,.2);">
+        <span style="padding:0 28px;">Google Ads · Performance Max</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">SEO Technique &amp; Éditorial</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">Make · n8n · Zapier</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">IA &amp; Prompting · Claude</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">GTM · Looker Studio · GA4</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">Voltaire 772 / 1000</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">TOEIC 725 / 990</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">MBA Stratégie Digitale · Niveau 7</span><span style="opacity:.25;">✦</span>
       </div>
-
-      <!-- Tags cloud -->
-      <div class="rv" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:64px;">
-        <span class="b b-dk" style="font-size:12px;">Football</span>
-        <span class="b b-dk" style="font-size:12px;">IA &amp; Tech</span>
-        <span class="b b-dk" style="font-size:12px;">Investissement</span>
-        <span class="b b-dk" style="font-size:12px;">Compétition</span>
-        <span class="b b-dk" style="font-size:12px;">Tennis</span>
-        <span class="b b-dk" style="font-size:12px;">Jeux vidéo</span>
-        <span class="b b-dk" style="font-size:12px;">Productivité</span>
-        <span class="b b-dk" style="font-size:12px;">Musculation</span>
-        <span class="b b-dk" style="font-size:12px;">Voyage</span>
-        <span class="b b-dk" style="font-size:12px;">Lecture</span>
-      </div>
-
-      <!-- 4 main interests -->
-      <div style="margin-bottom:40px;">
-
-        <div class="rv" style="display:grid;grid-template-columns:64px 1fr 1fr;gap:24px;padding:36px 0;border-bottom:1px solid rgba(255,255,255,.05);align-items:start;">
-          <span class="f-display" style="font-weight:700;font-size:44px;color:rgba(255,255,255,.1);line-height:1;">01</span>
-          <h3 class="f-display" style="font-weight:700;font-size:clamp(17px,1.5vw,22px);color:white;letter-spacing:-.02em;">Sport &amp; mouvement</h3>
-          <div>
-            <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.5);margin-bottom:16px;">Le foot avec les copains, le tennis quand l'occasion se présente, la muscu en routine. Pas de performances à afficher — juste le besoin de bouger et de me dépasser. Je suis les grands tournois de tennis et évidemment le football, même si je garde mes opinions sur les clubs pour moi.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="b b-dk" style="font-size:11px;">Football</span><span class="b b-dk" style="font-size:11px;">Tennis</span><span class="b b-dk" style="font-size:11px;">Musculation</span><span class="b b-dk" style="font-size:11px;">Course à pied</span></div>
-          </div>
-        </div>
-
-        <div class="rv rv1" style="display:grid;grid-template-columns:64px 1fr 1fr;gap:24px;padding:36px 0;border-bottom:1px solid rgba(255,255,255,.05);align-items:start;">
-          <span class="f-display" style="font-weight:700;font-size:44px;color:rgba(255,255,255,.1);line-height:1;">02</span>
-          <h3 class="f-display" style="font-weight:700;font-size:clamp(17px,1.5vw,22px);color:white;letter-spacing:-.02em;">IA &amp; nouveautés tech</h3>
-          <div>
-            <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.5);margin-bottom:16px;">Je suis de très près la course entre les grands modèles — chaque sortie notable est testée dans la journée. Ce n'est pas une veille professionnelle, c'est une vraie curiosité. YouTube reste ma principale source pour m'instruire en profondeur, des créateurs qui décortiquent les modèles, les architectures, les cas d'usage.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="b b-dk" style="font-size:11px;">LLMs &amp; modèles</span><span class="b b-dk" style="font-size:11px;">Veille active</span><span class="b b-dk" style="font-size:11px;">YouTube</span><span class="b b-dk" style="font-size:11px;">Tests hands-on</span></div>
-          </div>
-        </div>
-
-        <div class="rv rv2" style="display:grid;grid-template-columns:64px 1fr 1fr;gap:24px;padding:36px 0;border-bottom:1px solid rgba(255,255,255,.05);align-items:start;">
-          <span class="f-display" style="font-weight:700;font-size:44px;color:rgba(255,255,255,.1);line-height:1;">03</span>
-          <h3 class="f-display" style="font-weight:700;font-size:clamp(17px,1.5vw,22px);color:white;letter-spacing:-.02em;">Investissement</h3>
-          <div>
-            <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.5);margin-bottom:16px;">Pas un hobby passif — j'investis régulièrement et je me forme en continu sur les marchés, les stratégies, les mécaniques. L'idée de faire travailler son argent plutôt que de le laisser dormir me fascine. C'est aussi une discipline : patience, analyse, long terme.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="b b-dk" style="font-size:11px;">Marchés financiers</span><span class="b b-dk" style="font-size:11px;">Investissement régulier</span><span class="b b-dk" style="font-size:11px;">Formation continue</span></div>
-          </div>
-        </div>
-
-        <div class="rv rv3" style="display:grid;grid-template-columns:64px 1fr 1fr;gap:24px;padding:36px 0;border-bottom:1px solid rgba(255,255,255,.05);align-items:start;">
-          <span class="f-display" style="font-weight:700;font-size:44px;color:rgba(255,255,255,.1);line-height:1;">04</span>
-          <h3 class="f-display" style="font-weight:700;font-size:clamp(17px,1.5vw,22px);color:white;letter-spacing:-.02em;">Productivité &amp; développement perso</h3>
-          <div>
-            <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.5);margin-bottom:16px;">Je cherche toujours à optimiser ma façon de travailler, d'apprendre, d'organiser mon temps. Lectures de développement personnel, systèmes de notes, gestion de l'énergie — moins par obsession de la performance que par curiosité pour ce qui fonctionne vraiment.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="b b-dk" style="font-size:11px;">Lecture</span><span class="b b-dk" style="font-size:11px;">Systèmes &amp; méthodes</span><span class="b b-dk" style="font-size:11px;">Développement perso</span></div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- 3 secondary interests cards -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:64px;">
-        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 32px;" class="rv rv4">
-          <h4 style="font-size:16px;font-weight:700;color:white;margin-bottom:12px;letter-spacing:-.01em;">Compétition</h4>
-          <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.45);">J'aime gagner — sur un terrain, dans un jeu, dans un projet. Pas par ego, mais parce que la compétition force à se dépasser. Et c'est dans la défaite qu'on apprend le plus, même si on préfère ne pas avoir à apprendre ce jour-là.</p>
-        </div>
-        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 32px;" class="rv rv5">
-          <h4 style="font-size:16px;font-weight:700;color:white;margin-bottom:12px;letter-spacing:-.01em;">Jeux vidéo</h4>
-          <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.45);">Varié. Pas de genre fixe — ce qui compte c'est d'être dans le jeu, de comprendre les mécaniques, et si possible de gagner. Le côté compétitif prend vite le dessus.</p>
-        </div>
-        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 32px;" class="rv">
-          <h4 style="font-size:16px;font-weight:700;color:white;margin-bottom:12px;letter-spacing:-.01em;">Voyage</h4>
-          <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.45);">Voyager c'est s'instruire autrement. Chaque destination est une façon de changer d'angle, de sortir de sa bulle — et ça, c'est probablement la meilleure formation qu'il soit.</p>
-        </div>
-      </div>
-
-      <!-- Closing quote -->
-      <div class="rv" style="padding:36px 44px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;border-left:3px solid rgba(255,255,255,.2);">
-        <p style="font-size:clamp(15px,1.3vw,19px);font-weight:500;color:rgba(255,255,255,.7);line-height:1.65;font-style:italic;">"Je suis quelqu'un qui optimise tout ce qu'il touche — ses prompts, ses placements, son organisation. Pas par perfectionnisme, mais parce que j'aime comprendre comment les choses fonctionnent et comment les faire mieux."</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ CONTACT ══ -->
-  <section id="contact" style="position:relative;background:var(--ink);padding:clamp(100px,14vw,180px) clamp(20px,4vw,72px);text-align:center;overflow:hidden;">
-    <div class="noise"></div>
-    <div class="orb" style="width:580px;height:580px;background:#1d4ed8;bottom:-240px;right:-140px;opacity:.1;animation:orb2 22s ease-in-out infinite;animation-delay:-2s;"></div>
-    <div class="orb" style="width:380px;height:380px;background:#7C3AED;top:-80px;left:-80px;opacity:.07;animation:orb3 18s ease-in-out infinite;animation-delay:-6s;"></div>
-    <div style="position:relative;z-index:10;max-width:1400px;margin:0 auto;">
-      <div class="rv">
-        <p style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:32px;">Contact</p>
-        <h2 class="cta-title" style="color:white;margin-bottom:12px;">On collabore</h2>
-        <h2 class="cta-title" style="color:rgba(255,255,255,.16);margin-bottom:40px;">ensemble&nbsp;?</h2>
-        <p style="font-size:clamp(14px,1.2vw,18px);font-weight:300;max-width:440px;margin:0 auto 44px;line-height:1.75;color:rgba(255,255,255,.38);">
-          Disponible pour des projets, missions freelance, ou un échange sur le marketing digital et l'IA.
-        </p>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;">
-          <a href="mailto:rivierealex5@gmail.com" class="mag" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:white;color:#060606;font-size:14px;font-weight:600;text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,.9)'" onmouseout="this.style.background='white'">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            rivierealex5@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/alexandre-riviere-marketing/" target="_blank" rel="noopener noreferrer" class="mag" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:white;font-size:14px;font-weight:600;text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-        </div>
+      <div aria-hidden="true" style="display:flex;align-items:center;padding:12px 0;white-space:nowrap;font-size:11px;font-weight:500;letter-spacing:.05em;color:rgba(255,255,255,.2);">
+        <span style="padding:0 28px;">Google Ads · Performance Max</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">SEO Technique &amp; Éditorial</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">Make · n8n · Zapier</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">IA &amp; Prompting · Claude</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">GTM · Looker Studio · GA4</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">Voltaire 772 / 1000</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">TOEIC 725 / 990</span><span style="opacity:.25;">✦</span>
+        <span style="padding:0 28px;">MBA Stratégie Digitale · Niveau 7</span><span style="opacity:.25;">✦</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer style="background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:24px clamp(20px,4vw,72px);">
-    <div style="max-width:1400px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;font-size:12px;color:rgba(255,255,255,.2);">
-      <span>© 2025 Alexandre Rivière</span>
-      <span>Marketing Digital · Limoges, France</span>
+<!-- ══ VISION ══ -->
+<section id="manifeste" style="background:var(--paper);overflow:hidden;padding:clamp(80px,10vw,140px) clamp(20px,4vw,72px);">
+  <div style="max-width:1400px;margin:0 auto;">
+    <p class="rv section-label-dk" style="margin-bottom:clamp(40px,6vw,80px);">Ma vision</p>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div class="mf-wrap"><p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(52px,9vw,148px);line-height:.95;letter-spacing:-.04em;color:#0C0C0C;transition-delay:.05s;">Acquisition.</p></div>
+      <div class="mf-wrap"><p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(52px,9vw,148px);line-height:.95;letter-spacing:-.04em;-webkit-text-stroke:1.5px rgba(0,0,0,.12);color:transparent;transition-delay:.15s;">Référencement.</p></div>
+      <div class="mf-wrap"><p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(52px,9vw,148px);line-height:.95;letter-spacing:-.04em;color:rgba(0,0,0,.1);transition-delay:.26s;">Automatisation.</p></div>
+
+      <div class="mf-wrap"><p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(52px,9vw,148px);line-height:.95;letter-spacing:-.04em;color:#0C0C0C;transition-delay:.46s;">IA &amp; Data.</p></div>
+      <div class="mf-wrap"><p class="mf-line" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(26px,3.8vw,60px);line-height:1.3;letter-spacing:-.03em;color:var(--blue);margin-top:clamp(10px,2vw,20px);transition-delay:.58s;">Tout mesurer. Tout améliorer.</p></div>
     </div>
-  </footer>
-
-  <!-- ══════════ JAVASCRIPT ══════════ -->
-  <script>
-  (() => {
-    'use strict';
-
-    /* ────────────────────────────────────
-       EXPERIENCES DATA (textes originaux)
-    ──────────────────────────────────── */
-    const EXP = [
-      {
-        date: '2025 — 2027',
-        type: 'Alternance',
-        company: 'CrazyEight',
-        role: 'Alternance',
-        context: 'Marketing Digital · Google Ads · SEO · Automatisation · Multi-clients',
-        status: { label: 'En cours' },
-        tags: ['Marketing Digital', 'Google Ads', 'SEO', 'Automatisation', 'Multi-clients'],
-        metrics: [
-          { value: '500 €', label: 'Budget Ads / client / mois' },
-          { value: 'Search + PMax', label: 'Campagnes pilotées' },
-          { value: 'Multi-clients', label: 'Secteurs variés en simultané' },
-        ],
-        description: "Agence de marketing digital basée à Limoges, spécialisée dans l'acquisition et la visibilité en ligne pour un portefeuille de clients multi-secteurs.",
-        intro: "Plusieurs comptes à gérer en simultané, des budgets réels, des résultats attendus chaque semaine.",
-        tasks: [
-          "Campagnes Google Ads Search + Performance Max et Meta Ads : structuration, paramétrage des enchères, optimisation hebdomadaire, ajustements selon les indicateurs (CPC, ROAS, taux de conversion)",
-          "Audits SEO complets via Screaming Frog et Semrush : indexation, balises, maillage interne, pages catégories. Suivi mensuel GSC",
-          "Dashboards Looker Studio livrés aux clients, configuration GA4 + GTM, tracking des événements",
-          "Intégration IA dans les workflows : GPTs custom pour la production de contenu, automatisation du reporting via Slack, suivi des performances WordPress et Wix",
-        ],
-        quote: "Gérer plusieurs comptes en simultané m'a appris une chose : l'urgence et l'importance ne sont jamais au même endroit.",
-        allTags: ['Google Ads Search','Performance Max','Meta Ads','SEO technique','Rédaction SEO','Performances techniques','GTM','GA4','Looker Studio','Google Search Console','Semrush','Screaming Frog','WordPress / Wix','GPTs custom','Automatisation Slack','+ d\'autres'],
-      },
-      {
-        date: 'Fév — Juin 2025',
-        type: 'Stage · Communication',
-        company: 'Wisy',
-        role: 'Stage · Communication',
-        context: 'Communication Digitale · Stratégie Marketing · Création de Contenus · IA',
-        tags: ['Communication Digitale', 'Stratégie Marketing', 'Création de Contenus', 'IA'],
-        metrics: [
-          { value: '6 mois', label: 'Immersion complète' },
-          { value: 'GPT custom', label: 'Déployé en production' },
-          { value: 'Multi-formats', label: 'Print · Web · Social · Vidéo' },
-        ],
-        description: "Wisy est une Entreprise de Services du Numérique (ESN) basée en Corrèze, accompagnant PME et collectivités sur l'infrastructure, le développement web et la stratégie informatique.",
-        intro: "Mission communication et marketing pour donner de la visibilité à une structure technique peu habituée à se raconter.",
-        tasks: [
-          "Création de contenus LinkedIn (posts, carrousels), newsletters et scripts — pour rendre accessibles des sujets techniques",
-          "Séquences de prospection Waalaxy : ciblage B2B, rédaction des messages, suivi des taux de réponse",
-          "Construction d'un GPT custom calé sur la voix de marque Wisy, utilisé pour la production de contenu",
-          "Benchmark concurrentiel et analyse du positionnement face aux autres ESN régionales",
-          "Création de visuels Canva et gestion de la planification éditoriale via Swello",
-        ],
-        quote: "Faire du marketing pour une ESN, c'est apprendre à rendre le complexe simple. Cet exercice m'a plus appris que beaucoup de formations.",
-        allTags: ['Stratégie marketing','Prospection LinkedIn','Waalaxy','GPT Custom','Voix de marque','Copywriting','Création visuelle','Canva','Swello','Community Management','Analyse concurrentielle','Calendrier éditorial','+ d\'autres'],
-      },
-      {
-        date: 'Avr — Juil 2024',
-        type: 'Stage · Malte',
-        company: 'Kempinski Hotel San Lawrenz',
-        role: 'Stage · Malte',
-        context: 'Service Client · Hôtellerie Luxe 5★ · 100 % Anglophone',
-        badge: 'Gozo, Malte',
-        tags: ['Service Client', 'Hôtellerie Luxe 5★', '100 % Anglophone'],
-        metrics: [
-          { value: '3 mois', label: 'Immersion luxe international' },
-          { value: '5 ★', label: 'Standard hôtellerie de luxe', gold: true },
-          { value: '100 %', label: 'En anglais, sans filet' },
-        ],
-        description: "Établissement hôtelier cinq étoiles situé sur l'île de Gozo, à Malte — clientèle internationale, standards de service premium, environnement multiculturel.",
-        intro: "Cinq mois loin de tout cadre familier, dans un environnement où l'exigence n'est pas négociable.",
-        tasks: [
-          "Service client en anglais au quotidien auprès d'une clientèle internationale (Europe, Moyen-Orient, Asie)",
-          "Gestion logistique des séjours : anticipation des demandes, coordination entre les services",
-          "Formation et intégration de nouveaux membres d'équipe",
-          "Travail en équipe multiculturelle dans un environnement haute exigence",
-        ],
-        quote: "Cinq mois à Malte pour comprendre ce que signifie vraiment l'excellence de service. Ce niveau d'exigence, je l'ai ramené avec moi.",
-        allTags: ['Anglais courant','Service client premium','Hôtellerie de luxe','Gestion logistique',"Organisation d'événements",'Formation équipe','Communication interculturelle','Adaptabilité','+ d\'autres'],
-      },
-      {
-        date: 'Nov 2023 — Mar 2024',
-        type: 'Tutorat entreprise',
-        company: 'La Manufacture À Talents',
-        role: 'Tutorat entreprise',
-        context: 'Communication · Réseaux Sociaux · Création de Contenus · Stratégie de marque',
-        tags: ['Communication', 'Réseaux Sociaux', 'Création de Contenus', 'Stratégie de marque'],
-        metrics: [],
-        description: "Organisme de formation basé en Corrèze, habilité CPF, accompagnant lycéens et étudiants dans leur orientation et leur réussite scolaire.",
-        intro: "Première mission de communication complète, du brief à la livraison, sur une structure à taille humaine.",
-        tasks: [
-          "Gestion des réseaux sociaux : ligne éditoriale, calendrier de publication, création des visuels",
-          "Carrousels LinkedIn pensés pour toucher les familles et les prescripteurs",
-          "Veille sectorielle sur les formats et messages qui fonctionnent dans l'accompagnement scolaire",
-          "Création de supports print : flyers et affiches, du brief à la livraison finale",
-        ],
-        quote: "Communiquer pour des personnes en recherche de sens m'a appris que les mots ont un poids. On ne choisit pas ses formules par hasard.",
-        allTags: ['Stratégie de marque','Réseaux sociaux','Carrousels LinkedIn','Création visuelle','Copywriting','Veille sectorielle','Flyers / Print','Identité visuelle','+ d\'autres'],
-      },
-      {
-        date: 'Avr — Juin 2023',
-        type: 'Stage · Actions commerciales',
-        company: 'Delouis Fils',
-        role: 'Stage · Actions commerciales',
-        context: 'Action Commerciale · Relation Client · Data · PLV',
-        tags: ['Action Commerciale', 'Relation Client', 'Data', 'PLV'],
-        metrics: [],
-        description: "Maison fondée en 1885 à Champsac (Haute-Vienne), spécialisée dans les condiments et assaisonnements haut de gamme — moutardes, vinaigrettes, mayonnaises. 63 collaborateurs, positionnée premium sur les marchés bio et épicerie fine.",
-        intro: "Deux mois dans une PME familiale avec des standards précis et une culture de la qualité non négociable.",
-        tasks: [
-          "Relation client : suivi des comptes, traitement des demandes, gestion des priorités commerciales",
-          "Catalogues produits et supports PLV : conception et mise en page",
-          "Tableaux Excel de suivi commercial : saisie, mise à jour et structuration des données",
-        ],
-        quote: "Une maison de 140 ans avec des process rodés. J'ai appris à m'adapter à une culture d'entreprise établie, et à livrer sans qu'on ait besoin de le redemander.",
-        allTags: ['Relation client','Création catalogue','Excel','PLV','Action commerciale','Communication produit','Structuration de données','+ d\'autres'],
-      },
-      {
-        date: '2022 · 18 ans',
-        type: 'Initiative perso',
-        company: 'Micro-entreprise communication',
-        role: 'Initiative perso',
-        context: 'Fondateur · Prospection · Gestion autonome · Première vente',
-        tags: ['Fondateur', 'Prospection', 'Gestion autonome', 'Première vente'],
-        metrics: [],
-        description: "Initiative personnelle lancée à 18 ans — création de la structure, démarches administratives, premières tentatives de prospection.",
-        intro: "Aucun client acquis. Mais une première confrontation directe avec la réalité de se lancer seul, sans filet.",
-        tasks: [
-          "Création et immatriculation de la micro-entreprise",
-          "Tentatives de prospection en cold calling : préparation des scripts, premiers appels, gestion des refus",
-          "Apprentissage de la gestion administrative d'une structure indépendante",
-        ],
-        quote: "Aucun client, mais une leçon durable : se lancer sans garantie, c'est déjà savoir que l'échec ne tue pas.",
-        allTags: ["Création d'entreprise",'Cold calling','Prospection','Pitch commercial','Gestion administrative','Autonomie','+ d\'autres'],
-      },
-    ];
-
-    /* ────────────────────────────────────
-       RENDER CARDS
-    ──────────────────────────────────── */
-    function badgeHTML(exp) {
-      if (exp.type) {
-        return `<span class="b b-bl" style="font-size:11px;">${exp.type}</span>`;
-      }
-      return '';
-    }
-
-    const grid = document.getElementById('exp-grid');
-    EXP.forEach((exp, i) => {
-      const card = document.createElement('div');
-      card.className = 'exp-card rv' + (i > 0 ? ' rv' + Math.min(i, 5) : '');
-      card.setAttribute('data-idx', i);
-      card.setAttribute('role', 'button');
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('aria-label', `Voir les détails de ${exp.company}`);
-
-      const tagsHTML = exp.tags.slice(0, 3).map(t =>
-        `<span class="b b-dk" style="font-size:11px;">${t}</span>`
-      ).join('');
-
-      card.innerHTML = `
-        <div class="exp-card-top">
-          <div class="exp-date">
-            <span>${exp.date}</span>
-            ${badgeHTML(exp)}
-          </div>
-          <div class="exp-company">${exp.company}</div>
-          <div class="exp-role">${exp.role}<br><span style="color:rgba(255,255,255,.28);font-size:12px;">${exp.context}</span></div>
-        </div>
-        <div class="exp-card-footer">
-          <div class="exp-tags">${tagsHTML}</div>
-          <div style="margin-top:14px;" class="exp-more">
-            <span>Voir les détails</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      `;
-
-      card.addEventListener('click', () => openModal(i));
-      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(i); });
-      grid.appendChild(card);
-    });
-
-    /* ────────────────────────────────────
-       MODAL
-    ──────────────────────────────────── */
-    const overlay = document.getElementById('modal-overlay');
-    const content = document.getElementById('modal-content');
-    const closeBtn = document.getElementById('modal-close');
-
-    function openModal(idx) {
-      const exp = EXP[idx];
-
-      const metricsHTML = exp.metrics.length ? `
-        <hr class="modal-divider">
-        <p class="modal-label">Chiffres clés</p>
-        <div class="modal-metrics">
-          ${exp.metrics.map(m => `
-            <div class="modal-metric">
-              <div class="modal-metric-val" ${m.gold ? 'style="color:#FCD34D;"' : ''}>${m.value}</div>
-              <div class="modal-metric-lbl">${m.label}</div>
-            </div>
-          `).join('')}
-        </div>
-      ` : '';
-
-      const tasksHTML = exp.tasks.length ? `
-        <hr class="modal-divider">
-        <p class="modal-label">Missions &amp; activités</p>
-        <ul class="modal-tasks">
-          ${exp.tasks.map(t => `<li>${t}</li>`).join('')}
-        </ul>
-      ` : '';
-
-      const introHTML = exp.intro ? `<p class="modal-intro">${exp.intro}</p>` : '';
-      const quoteHTML = exp.quote ? `<blockquote class="modal-quote">${exp.quote}</blockquote>` : '';
-      const finalTags = (exp.allTags && exp.allTags.length) ? exp.allTags : exp.tags;
-
-      content.innerHTML = `
-        <div class="modal-date">
-          <span>${exp.date}</span>
-          ${exp.type ? `<span class="b b-dk" style="font-size:11px;">${exp.type}</span>` : ''}
-          ${exp.status ? `<span class="b b-gn" style="font-size:11px;"><span style="width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block;"></span>${exp.status.label}</span>` : ''}
-          ${exp.badge ? `<span class="b b-am" style="font-size:11px;">${exp.badge}</span>` : ''}
-        </div>
-        <h2 class="modal-company" id="modal-title">${exp.company}</h2>
-        <p class="modal-role">${exp.role} <br><span style="color:rgba(255,255,255,.3);font-size:13px;">${exp.context}</span></p>
-
-        <hr class="modal-divider">
-        <p class="modal-label">Description</p>
-        <p class="modal-desc">${exp.description}</p>
-        ${introHTML}
-
-        ${metricsHTML}
-        ${tasksHTML}
-        ${quoteHTML}
-
-        <hr class="modal-divider">
-        <p class="modal-label">Compétences</p>
-        <div class="modal-tags">
-          ${finalTags.map(t => `<span class="b b-dk">${t}</span>`).join('')}
-        </div>
-      `;
-
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      closeBtn.focus();
-    }
-
-    function closeModal() {
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    closeBtn.addEventListener('click', closeModal);
-    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-    /* ────────────────────────────────────
-       LOADER
-    ──────────────────────────────────── */
-    window.addEventListener('load', () => {
-      setTimeout(() => document.getElementById('loader').classList.add('gone'), 850);
-    });
-
-    /* ────────────────────────────────────
-       CURSOR
-    ──────────────────────────────────── */
-    const dot  = document.getElementById('cur-dot');
-    const ring = document.getElementById('cur-ring');
-    let mx=-200, my=-200, rx=-200, ry=-200;
-
-    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
-    document.addEventListener('mouseleave', () => { mx=-200; my=-200; });
-
-    ;(function loop(){
-      dot.style.transform  = `translate(${mx-4}px,${my-4}px)`;
-      rx += (mx-rx)*.1; ry += (my-ry)*.1;
-      ring.style.transform = `translate(${rx-19}px,${ry-19}px)`;
-      requestAnimationFrame(loop);
-    })();
-
-    document.querySelectorAll('a,button,.exp-card').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        ring.style.width = ring.style.height = '52px';
-        ring.style.borderColor = 'rgba(37,99,235,.5)';
-      });
-      el.addEventListener('mouseleave', () => {
-        ring.style.width = ring.style.height = '38px';
-        ring.style.borderColor = 'rgba(255,255,255,.2)';
-      });
-    });
-
-    /* ────────────────────────────────────
-       SCROLL
-    ──────────────────────────────────── */
-    const bar = document.getElementById('progress');
-    const nav = document.getElementById('nav');
-
-    window.addEventListener('scroll', () => {
-      bar.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%';
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive:true });
-
-    /* scroll-spy */
-    const spy = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          document.querySelectorAll('.nav-links a[data-section]').forEach(l =>
-            l.classList.toggle('active', l.dataset.section === e.target.id)
-          );
-        }
-      });
-    }, { threshold:.3 });
-    document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
-
-    /* ────────────────────────────────────
-       REVEAL
-    ──────────────────────────────────── */
-    const revObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
-    }, { threshold:.07, rootMargin:'0px 0px -48px 0px' });
-    document.querySelectorAll('.rv').forEach(el => revObs.observe(el));
-
-    /* ────────────────────────────────────
-       3D CARD TILT
-    ──────────────────────────────────── */
-    document.querySelectorAll('.exp-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX-r.left)/r.width  - .5;
-        const y = (e.clientY-r.top) /r.height - .5;
-        card.style.transform = `perspective(800px) rotateX(${y*-5}deg) rotateY(${x*5}deg) translateY(-4px)`;
-      });
-      card.addEventListener('mouseleave', () => { card.style.transform=''; });
-    });
-
-    /* ────────────────────────────────────
-       MAGNETIC BUTTONS
-    ──────────────────────────────────── */
-    document.querySelectorAll('.mag').forEach(btn => {
-      btn.addEventListener('mousemove', e => {
-        const r = btn.getBoundingClientRect();
-        btn.style.transform = `translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.2}px)`;
-      });
-      btn.addEventListener('mouseleave', () => { btn.style.transform=''; });
-    });
-
-    /* ────────────────────────────────────
-       MOBILE HAMBURGER
-    ──────────────────────────────────── */
-    const ham   = document.getElementById('ham');
-    const mMenu = document.getElementById('mobile-menu');
-
-    ham.addEventListener('click', () => {
-      const open = ham.classList.toggle('open');
-      ham.setAttribute('aria-expanded', open);
-      mMenu.classList.toggle('open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-    mMenu.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => {
-      ham.classList.remove('open');
-      ham.setAttribute('aria-expanded','false');
-      mMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    }));
-
-    /* ────────────────────────────────────
-       BOUNCE ARROW KEYFRAME
-    ──────────────────────────────────── */
-    const s = document.createElement('style');
-    s.textContent = `@keyframes bounceY{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}`;
-    document.head.appendChild(s);
-
-  })();
-  </script>
+    <p class="rv" style="margin-top:clamp(40px,5vw,72px);font-size:clamp(15px,1.2vw,18px);font-weight:300;max-width:540px;line-height:1.85;color:rgba(0,0,0,.42);">
+      Six expériences, cinq secteurs, un fil rouge — comprendre comment les systèmes fonctionnent, les optimiser, mesurer l'impact à chaque étape.
+    </p>
+  </div>
+</section>
 
 <style>
-/* ═══════════════════════════════════════
-   MOBILE FIXES — max 640px
-   ═══════════════════════════════════════ */
-
-/* Prevent ALL horizontal overflow */
-html, body { overflow-x:hidden; max-width:100vw; }
-* { box-sizing:border-box; }
-
-/* ── Hero name: allow wrap on mobile ── */
-@media(max-width:640px){
-  .hero-name { white-space:normal !important; font-size:clamp(38px,12vw,72px) !important; line-height:1.05 !important; }
-}
-
-/* ── Manifeste: reduce huge text on very small screens ── */
-@media(max-width:480px){
-  #manifeste [style*="clamp(52px"] {
-    font-size:clamp(30px,9vw,52px) !important;
-  }
-}
-
-/* ── Formation timeline ── */
-.fm-mob-yr {
-  display:none;
-  font-family:'Space Grotesk',sans-serif;
-  font-weight:800;font-size:28px;color:#0C0C0C;
-  letter-spacing:-.04em;line-height:1;
-  margin-bottom:12px;
-}
-@media(max-width:640px){
-  #fm-year-row { display:none !important; }
-  #fm-rail-row { display:none !important; }
-  #fm-content-row {
-    grid-template-columns:1fr !important;
-    gap:0 !important;
-  }
-  #fmc1,#fmc2,#fmc3 {
-    text-align:left !important;
-    align-items:flex-start !important;
-    padding:28px 0 !important;
-    border-bottom:1px solid rgba(0,0,0,.08);
-  }
-  .fm-mob-yr { display:block; }
-  .fm-tick { display:none !important; }
-}
-
-/* ── Tools table: remove fixed 220px+100px columns ── */
-@media(max-width:720px){
-  #tools-table > div {
-    grid-template-columns:1fr auto !important;
-    gap:8px 12px !important;
-  }
-  /* header: hide 3rd column label */
-  #tools-table > div:first-child > :nth-child(3) { display:none !important; }
-  /* data rows: description spans full width */
-  #tools-table > div:not(:first-child) > :nth-child(3) {
-    grid-column:1 / -1 !important;
-    padding-top:4px;
-  }
-}
-
-/* ── Languages grid: 3→1 col ── */
-@media(max-width:640px){
-  #lang-grid { grid-template-columns:1fr !important; }
-}
-
-/* ── Tools mastered grid (formation + outils sections) ── */
-@media(max-width:500px){
-  #formation [style*="minmax(280px"],
-  #formation [style*="minmax(260px"] {
-    grid-template-columns:1fr !important;
-  }
-}
-
-/* ── Savoir-faire: accordion on mobile, hide sticky panel ── */
-@media(max-width:759px){
-  #sk-split { grid-template-columns:1fr !important; }
-  #sk-split > div:last-child { display:none !important; }
-  .sk-item { padding:14px 0 14px 10px !important; }
-}
-/* Accordion content never shows on desktop */
-@media(min-width:760px){
-  .sk-acc { display:none !important; }
-}
-
-/* ── Experience cards grid ── */
-@media(max-width:500px){
-  .exp-grid { grid-template-columns:1fr !important; }
-}
-
-/* ── Outils: 3-col principles grid ── */
-@media(max-width:640px){
-  #outils [style*="grid-template-columns:repeat(3"] {
-    grid-template-columns:1fr !important;
-  }
-}
-
-/* ── À propos: interests rows (64px 1fr 1fr → 40px 1fr, desc wraps below) ── */
-@media(max-width:640px){
-  #apropos [style*="grid-template-columns:64px"] {
-    grid-template-columns:40px 1fr !important;
-    gap:12px 16px !important;
-  }
-  #apropos [style*="grid-template-columns:64px"] > span:first-child {
-    font-size:28px !important;
-  }
-  #apropos [style*="grid-template-columns:64px"] > div:last-child {
-    grid-column:2 / -1 !important;
-  }
-  /* secondary interests auto-fit already handles mobile, reduce minmax */
-  #apropos [style*="minmax(260px"] {
-    grid-template-columns:1fr !important;
-  }
-}
-
-/* ── Section padding reduction on mobile ── */
-@media(max-width:640px){
-  section { padding-left:20px !important; padding-right:20px !important; }
-}
-
-/* ── Nav mobile: ensure no overflow ── */
-@media(max-width:640px){
-  nav { padding-left:16px !important; padding-right:16px !important; }
-}
-
-/* ── Hero Carousel ── */
-#hero-carousel {
-  position:absolute;
-  top:0; right:0; bottom:44px;
-  width:clamp(300px,40%,560px);
-  display:flex;
-  gap:12px;
-  overflow:hidden;
-  -webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
-  mask-image:linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
-  z-index:5;
-  pointer-events:auto;
-}
-#hero-carousel:hover .hc-track { animation-play-state:paused; }
-.hc-col { flex:1; overflow:hidden; }
-.hc-track {
-  animation:hcScroll linear infinite;
-  will-change:transform;
-}
-@keyframes hcScroll {
-  from { transform:translateY(0); }
-  to   { transform:translateY(-50%); }
-}
-.hc-strip { display:flex; flex-direction:column; gap:12px; padding-bottom:12px; }
-.hc-card {
-  position:relative;
-  border-radius:12px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.07);
-  flex-shrink:0;
-  background:rgba(255,255,255,.03);
-}
-.hc-card img {
-  width:100%;
-  height:auto;
-  max-height:280px;
-  object-fit:cover;
-  display:block;
-  transition:transform .4s ease;
-}
-.hc-card:hover img { transform:scale(1.03); }
-.hc-label {
-  position:absolute;
-  bottom:0; left:0; right:0;
-  padding:28px 10px 8px;
-  background:linear-gradient(transparent, rgba(0,0,0,.75));
-  font-size:9px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.55);
-  opacity:0;
-  transition:opacity .25s;
-}
-.hc-card:hover .hc-label { opacity:1; }
-@media(max-width:960px){
-  #hero-carousel { display:none; }
-  /* Affiche le stack mobile à la place */
-  #hero-mob-stack { display:flex !important; }
-}
-/* Info row : no-wrap sur toutes tailles */
-.hero-info-row { flex-wrap:nowrap; overflow:hidden; }
-@media(max-width:600px){
-  .hero-sep { display:none !important; }
-  .hero-info-row { gap:12px !important; flex-wrap:nowrap !important; overflow:hidden; }
-  .hero-info-row span[style*="MBA"] { display:none; }
-}
-
-/* ── Tool rows ── */
-.tool-row:hover { background:rgba(255,255,255,.04) !important; }
-.tool-row:hover .tr-name { transform:translateX(5px) !important; color:white !important; }
-.tool-row:hover .tr-tag  { color:rgba(255,255,255,.55) !important; }
-
-@media(max-width:680px){
-  #ia-veille-grid { grid-template-columns:1fr !important; }
-}
+  .mf-wrap { overflow:hidden; }
+  .mf-line { transform:translateY(110%);opacity:0;transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .6s ease; }
+  .mf-line.on { transform:translateY(0);opacity:1; }
 </style>
+<script>
+  (function(){
+    document.querySelectorAll('.mf-wrap').forEach(wrap => {
+      const line = wrap.querySelector('.mf-line');
+      if(!line) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ line.classList.add('on'); obs.unobserve(wrap); } });
+      },{ threshold:.1 });
+      obs.observe(wrap);
+    });
+  })();
+</script>
+
+<!-- ══ EXPÉRIENCES ══ -->
+<section id="experiences" style="background:var(--ink);padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px);">
+  <div style="max-width:1400px;margin:0 auto;">
+
+    <div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:56px;">
+      <div>
+        <p class="section-label" style="margin-bottom:16px;">Expériences</p>
+        <h2 class="section-title-lt">Ce que<br>j'ai construit</h2>
+      </div>
+      <p style="font-size:14px;max-width:320px;line-height:1.75;color:rgba(255,255,255,.32);">
+        Chaque expérience présentée avec ce qu'elle prouve — pas ce qu'elle était censée m'apprendre.
+        <br><span style="font-size:12px;color:rgba(37,99,235,.7);margin-top:8px;display:inline-flex;align-items:center;gap:6px;"><span style="width:5px;height:5px;border-radius:50%;background:var(--blue);animation:pulse 2s infinite;display:inline-block;"></span>Cliquer sur une carte pour les détails</span>
+      </p>
+    </div>
+
+    <div class="exp-grid rv" id="exp-grid"></div>
+
+  </div>
+</section>
+
+<!-- ══ SAVOIR-FAIRE ══ -->
+<section id="savoir-faire" style="background:var(--paper);padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px);">
+  <div style="max-width:1400px;margin:0 auto;">
+
+    <div class="rv" style="margin-bottom:64px;">
+      <p class="section-label-dk" style="margin-bottom:16px;">Savoir-faire</p>
+      <h2 class="section-title-dk">Ce que je sais<br>vraiment faire</h2>
+      <p style="font-size:15px;line-height:1.7;color:rgba(0,0,0,.42);margin-top:20px;max-width:480px;">Pas des intitulés de poste — des compétences prouvées par des situations réelles.</p>
+    </div>
+
+    <div id="sk-split" style="display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,6vw,96px);align-items:start;">
+
+      <div id="sk-list" style="border-top:1px solid rgba(0,0,0,.08);">
+        <div class="sk-item sk-active" onclick="setSkill(0)"><span class="ski-num">01</span><span class="ski-title">Piloter une campagne acquisition de A à Z</span><span class="ski-arr">→</span></div>
+        <div class="sk-item" onclick="setSkill(1)"><span class="ski-num">02</span><span class="ski-title">Optimiser un site pour le référencement</span><span class="ski-arr">→</span></div>
+        <div class="sk-item" onclick="setSkill(2)"><span class="ski-num">03</span><span class="ski-title">Automatiser ce qui mérite de l'être</span><span class="ski-arr">→</span></div>
+        <div class="sk-item" onclick="setSkill(3)"><span class="ski-num">04</span><span class="ski-title">Lire des données et prendre des décisions</span><span class="ski-arr">→</span></div>
+        <div class="sk-item" onclick="setSkill(4)"><span class="ski-num">05</span><span class="ski-title">Communiquer avec cohérence et précision</span><span class="ski-arr">→</span></div>
+        <div class="sk-item" onclick="setSkill(5)"><span class="ski-num">06</span><span class="ski-title">Apprendre et s'adapter plus vite que la norme</span><span class="ski-arr">→</span></div>
+      </div>
+
+      <!-- Panneau droit — pas de ghost number -->
+      <div style="position:sticky;top:clamp(80px,10vw,120px);">
+        <div id="sk-detail" style="transition:opacity .22s,transform .22s;">
+          <div style="width:28px;height:2px;background:var(--blue);border-radius:2px;margin-bottom:20px;"></div>
+          <h3 id="sk-d-title" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,28px);color:#0C0C0C;letter-spacing:-.03em;line-height:1.25;margin-bottom:16px;">Piloter une campagne acquisition de A à Z</h3>
+          <p id="sk-d-desc" style="font-size:14px;line-height:1.85;color:rgba(0,0,0,.48);margin-bottom:24px;">Stratégie, structure, annonces, GTM, suivi des conversions, analyse. Sur plusieurs clients simultanément. Google Ads n'est pas un outil à configurer une fois — c'est un système vivant.</p>
+          <ul id="sk-d-list" style="list-style:none;display:flex;flex-direction:column;gap:10px;"></ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const SK_DATA = [
+    { title:'Piloter une campagne acquisition de A à Z', desc:"Stratégie, structure, annonces, GTM, suivi des conversions, analyse. Sur plusieurs clients simultanément. Google Ads n'est pas un outil à configurer une fois — c'est un système vivant.", items:['Search + Performance Max multi-clients','~500 € de budget géré / client / mois','Configuration des conversions via GTM','Reporting Looker Studio en autonomie'] },
+    { title:'Optimiser un site pour le référencement', desc:"SEO technique et éditorial : audits de crawl, vitesse, rédaction optimisée, structure de silos, balises. Le SEO n'est pas une checklist — c'est une compréhension des moteurs.", items:['Audits techniques complets (vitesse, crawl)','Rédaction SEO + pages catégories','GSC · Semrush · Screaming Frog hebdo','Optimisation PageSpeed / Core Web Vitals'] },
+    { title:"Automatiser ce qui mérite de l'être", desc:"Identifier une tâche répétitive, construire le workflow qui la supprime. Reporting auto, Slack, GPTs pour la cohérence de marque. C'est du temps récupéré pour ce qui demande un vrai jugement.", items:['Stats agrégées + envoi Slack automatique','GPTs custom à voix de marque constante','Prompts structurés et réutilisables','Make · Zapier · n8n selon le contexte'] },
+    { title:'Lire des données et prendre des décisions', desc:'La donnée ne parle pas seule. Il faut choisir quoi suivre, construire les vues, et en tirer une action. Dashboards configurés, exports transformés en décisions concrètes.', items:['Dashboards Looker Studio multi-clients','Suivi GSC · GA4 en routine hebdo','Analyse comparative avant/après optim.'] },
+    { title:'Communiquer avec cohérence et précision', desc:'Post social, article SEO, flyer print, script — chaque format a ses règles. Ce qui ne change pas : la clarté et le ton. Voltaire 772/1000 · TOEIC 725/990 · 3 mois Malte.', items:['Contenus multiformat : web, print, script','Stratégie de marque (La Manufacture)','Voix de marque via IA (Wisy)','Anglais en environnement luxe'] },
+    { title:"Apprendre et s'adapter plus vite que la norme", desc:"Veille IA quotidienne, chaque outil testé à sa sortie. La rapidité d'apprentissage augmentée par l'IA est ma vraie compétence différenciante.", items:['Nouveaux outils maîtrisés en quelques jours','Veille : YouTube · formations · Perplexity','Tests hands-on de toutes les nouveautés IA','Micro-entreprise lancée à 18 ans seul'] }
+  ];
+
+  function renderSkillList(items){
+    return items.map(it => `<li style="font-size:13px;color:rgba(0,0,0,.52);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--blue);font-weight:600;flex-shrink:0;">→</span>${it}</li>`).join('');
+  }
+
+  // init list
+  document.getElementById('sk-d-list').innerHTML = renderSkillList(SK_DATA[0].items);
+
+  function setSkill(i){
+    const elems = document.querySelectorAll('.sk-item');
+    const d = SK_DATA[i];
+
+    if(window.innerWidth < 760){
+      const clicked = elems[i];
+      const isActive = clicked.classList.contains('sk-active');
+      elems.forEach(el => {
+        el.classList.remove('sk-active');
+        const exp = el.querySelector('.sk-acc');
+        if(exp){ exp.style.maxHeight='0'; exp.style.opacity='0'; setTimeout(()=>exp.remove(),280); }
+      });
+      if(isActive) return;
+      clicked.classList.add('sk-active');
+      const acc = document.createElement('div');
+      acc.className='sk-acc';
+      acc.style.cssText='grid-column:1/-1;overflow:hidden;max-height:0;opacity:0;transition:max-height .4s cubic-bezier(.16,1,.3,1),opacity .3s;';
+      acc.innerHTML=`<div style="padding:14px 0 18px;border-top:1px solid rgba(0,0,0,.07);margin-top:4px;"><p style="font-size:13px;line-height:1.8;color:rgba(0,0,0,.48);margin-bottom:12px;">${d.desc}</p><ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">${d.items.map(it=>`<li style="font-size:12px;color:rgba(0,0,0,.5);display:flex;align-items:baseline;gap:8px;"><span style="color:var(--blue);font-weight:600;flex-shrink:0;">→</span>${it}</li>`).join('')}</ul></div>`;
+      clicked.appendChild(acc);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{ acc.style.maxHeight='500px'; acc.style.opacity='1'; }));
+      return;
+    }
+
+    const det = document.getElementById('sk-detail');
+    det.style.opacity='0'; det.style.transform='translateY(8px)';
+    setTimeout(() => {
+      document.getElementById('sk-d-title').textContent = d.title;
+      document.getElementById('sk-d-desc').textContent = d.desc;
+      document.getElementById('sk-d-list').innerHTML = renderSkillList(d.items);
+      det.style.opacity='1'; det.style.transform='translateY(0)';
+    }, 180);
+    elems.forEach((el,j) => el.classList.toggle('sk-active', j===i));
+  }
+</script>
+
+<!-- ══ FORMATION ══ -->
+<section id="formation" style="background:var(--ink);padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px);">
+  <div style="max-width:1400px;margin:0 auto;">
+
+    <div class="rv" style="margin-bottom:72px;">
+      <p class="section-label" style="margin-bottom:16px;">Formation</p>
+      <h2 class="section-title-lt">D'où<br>je viens</h2>
+      <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,.4);margin-top:20px;max-width:480px;">Un parcours construit autour d'une conviction simple : le terrain avant les diplômes.</p>
+    </div>
+
+    <!-- Timeline -->
+    <div id="fm-timeline" style="margin-bottom:80px;">
+      <div id="fm-year-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;margin-bottom:0;">
+        <div style="display:flex;flex-direction:column;align-items:center;padding-bottom:20px;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(36px,4.5vw,60px);color:#FAFAF9;letter-spacing:-.05em;line-height:1;">2025</span>
+          <span style="font-size:11px;color:rgba(255,255,255,.3);margin-top:4px;">→ 2027</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;padding-bottom:20px;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(36px,4.5vw,60px);color:rgba(255,255,255,.4);letter-spacing:-.05em;line-height:1;">2022</span>
+          <span style="font-size:11px;color:rgba(255,255,255,.22);margin-top:4px;">→ 2025</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;padding-bottom:20px;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(36px,4.5vw,60px);color:rgba(0,0,0,.2);letter-spacing:-.05em;line-height:1;">2019</span>
+          <span style="font-size:11px;color:rgba(0,0,0,.15);margin-top:4px;">→ 2022</span>
+        </div>
+      </div>
+
+      <div id="fm-rail-row" style="position:relative;height:32px;">
+        <div style="position:absolute;top:50%;left:calc(100%/6);right:calc(100%/6);height:1px;background:rgba(255,255,255,.1);transform:translateY(-50%);overflow:hidden;">
+          <div id="fm-line" style="width:0;height:100%;background:var(--blue);transition:width 1.4s cubic-bezier(.16,1,.3,1);"></div>
+        </div>
+        <div id="fmd1" style="position:absolute;left:calc(100%/6);top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid rgba(255,255,255,.15);z-index:2;transition:border-color .4s,background .4s,box-shadow .4s;"></div>
+        <div id="fmd2" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid rgba(255,255,255,.15);z-index:2;transition:border-color .4s,background .4s,box-shadow .4s;"></div>
+        <div id="fmd3" style="position:absolute;left:calc(100%*5/6);top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:var(--ink);border:2px solid rgba(255,255,255,.15);z-index:2;transition:border-color .4s,background .4s,box-shadow .4s;"></div>
+      </div>
+
+      <div id="fm-content-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:28px;gap:20px;">
+        <div id="fmc1" style="opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;">
+          <span class="fm-mob-yr">2025 <span style="font-size:11px;opacity:.5;">→ 2027</span></span>
+          <div class="fm-tick" style="width:1px;height:16px;background:rgba(0,0,0,.12);margin-bottom:16px;flex-shrink:0;"></div>
+          <p style="font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.28);margin-bottom:10px;">Studi · CrazyEight</p>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(14px,1.4vw,18px);color:#FAFAF9;letter-spacing:-.025em;line-height:1.25;margin-bottom:10px;">MBA Stratégie Digitale</h3>
+          <p style="font-size:12px;line-height:1.75;color:rgba(255,255,255,.42);">Marketing digital, Communication, Transformation numérique.</p>
+          <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center;align-items:center;">
+            <span style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--blue);"><span style="width:5px;height:5px;border-radius:50%;background:var(--blue);display:inline-block;animation:pulse 2s infinite;flex-shrink:0;"></span>En cours</span>
+            <span style="font-size:11px;color:rgba(255,255,255,.3);font-weight:500;">Niveau 7</span>
+          </div>
+        </div>
+        <div id="fmc2" style="opacity:0;transform:translateY(16px);transition:opacity .5s .5s,transform .5s .5s;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;">
+          <span class="fm-mob-yr">2022 <span style="font-size:11px;opacity:.5;">→ 2025</span></span>
+          <div class="fm-tick" style="width:1px;height:16px;background:rgba(0,0,0,.12);margin-bottom:16px;flex-shrink:0;"></div>
+          <p style="font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.28);margin-bottom:10px;">EGC Business School · Brive</p>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(14px,1.4vw,18px);color:#FAFAF9;letter-spacing:-.025em;line-height:1.25;margin-bottom:10px;">Bachelor Commerce &amp; Marketing</h3>
+          <p style="font-size:12px;line-height:1.75;color:rgba(255,255,255,.42);">Marketing, Management, Commerce. Terrain chaque semestre.</p>
+          <div style="margin-top:14px;"><span style="font-size:11px;color:rgba(255,255,255,.3);font-weight:500;">BAC+3</span></div>
+        </div>
+        <div id="fmc3" style="opacity:0;transform:translateY(16px);transition:opacity .5s 1s,transform .5s 1s;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;">
+          <span class="fm-mob-yr">2019 <span style="font-size:11px;opacity:.5;">→ 2022</span></span>
+          <div class="fm-tick" style="width:1px;height:16px;background:rgba(0,0,0,.12);margin-bottom:16px;flex-shrink:0;"></div>
+          <p style="font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.28);margin-bottom:10px;">Lycée Raoul Dautry · Limoges</p>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(14px,1.4vw,18px);color:#FAFAF9;letter-spacing:-.025em;line-height:1.25;margin-bottom:10px;">Baccalauréat</h3>
+          <p style="font-size:12px;line-height:1.75;color:rgba(255,255,255,.42);">Sciences de l'Ingénieur, NSI, Maths. Base technique solide.</p>
+          <div style="margin-top:14px;"><span style="font-size:11px;color:rgba(255,255,255,.3);font-weight:500;">Mention AB</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Langues -->
+    <p class="section-label rv" style="margin-bottom:20px;">Langues</p>
+    <div id="lang-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:56px;">
+      <div class="rv" style="background:#111;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px 28px;">
+        <p style="font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.28);margin-bottom:14px;">Français</p>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px;">
+          <span class="fm-score" data-target="772" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(22px,2.5vw,36px);color:#FAFAF9;letter-spacing:-.04em;line-height:1;">0</span>
+          <span style="font-size:11px;color:rgba(255,255,255,.3);font-weight:500;">/ 1000</span>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,.35);">Langue maternelle · Voltaire</p>
+      </div>
+      <div class="rv rv1" style="background:#111;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px 28px;">
+        <p style="font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.28);margin-bottom:14px;">Anglais</p>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px;">
+          <span class="fm-score" data-target="725" style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(22px,2.5vw,36px);color:#FAFAF9;letter-spacing:-.04em;line-height:1;">0</span>
+          <span style="font-size:11px;color:rgba(255,255,255,.3);font-weight:500;">/ 990</span>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,.35);">Professionnel · TOEIC · 3 mois Malte</p>
+      </div>
+      <div class="rv rv2" style="background:#111;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px 28px;">
+        <p style="font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.28);margin-bottom:14px;">Espagnol</p>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px;">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(22px,2.5vw,36px);color:#FAFAF9;letter-spacing:-.04em;line-height:1;">B1</span>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,.35);">Niveau B1 · Scolaire</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  (function(){
+    const tl = document.getElementById('fm-timeline');
+    const line = document.getElementById('fm-line');
+    if(!tl||!line) return;
+    const d1=document.getElementById('fmd1'), d2=document.getElementById('fmd2'), d3=document.getElementById('fmd3');
+    let revealed = false;
+    function setDot(el,on){
+      if(!el) return;
+      if(on){ el.style.borderColor='var(--blue)';el.style.background='var(--blue)';el.style.boxShadow='0 0 0 4px rgba(37,99,235,.15)'; }
+      else { el.style.borderColor='rgba(0,0,0,.15)';el.style.background='var(--paper)';el.style.boxShadow='none'; }
+    }
+    function update(){
+      const r=tl.getBoundingClientRect(), vh=window.innerHeight;
+      const p=Math.max(0,Math.min(1,(vh-r.top)/(vh*.75)));
+      line.style.transition='none'; line.style.width=(p*100)+'%';
+      setDot(d1,p>.05); setDot(d2,p>.5); setDot(d3,p>.95);
+      if(!revealed&&p>.12){
+        revealed=true;
+        ['fmc1','fmc2','fmc3'].forEach((id,i)=>{
+          const c=document.getElementById(id);
+          if(c) setTimeout(()=>{ c.style.opacity='1';c.style.transform='translateY(0)'; },i*180);
+        });
+      }
+    }
+    window.addEventListener('scroll',update,{passive:true}); update();
+    document.querySelectorAll('.fm-score').forEach(el=>{
+      const target=parseInt(el.dataset.target,10);
+      const obs=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if(!e.isIntersecting) return; obs.unobserve(el);
+          let t0=null;
+          function step(ts){ if(!t0)t0=ts; const p=Math.min((ts-t0)/1100,1); el.textContent=Math.round(p*p*target); if(p<1)requestAnimationFrame(step); else el.textContent=target; }
+          requestAnimationFrame(step);
+        });
+      },{threshold:.5});
+      obs.observe(el);
+    });
+  })();
+</script>
+
+<!-- ══ IA ══ -->
+<section id="ia" style="background:var(--paper);padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px);">
+  <div style="max-width:1400px;margin:0 auto;">
+
+    <div class="rv" style="margin-bottom:64px;">
+      <p class="section-label-dk" style="margin-bottom:16px;">Intelligence Artificielle</p>
+      <h2 class="section-title-dk">L'IA comme<br>levier réel</h2>
+      <p style="font-size:15px;line-height:1.75;color:rgba(0,0,0,.4);margin-top:20px;max-width:480px;">Une pratique quotidienne, intégrée dans chaque workflow et chaque décision.</p>
+    </div>
+
+    <!-- Usage résumé -->
+    <div class="rv" style="max-width:640px;margin-bottom:48px;">
+      <p style="font-size:clamp(15px,1.3vw,18px);line-height:1.9;color:rgba(0,0,0,.5);font-weight:300;">Je m'en sers au quotidien pour aller plus vite, mieux réfléchir et automatiser ce qui n'a pas besoin d'un humain. Reporting automatique, assistants calés sur une voix de marque, veille synthétisée chaque matin. L'IA ne remplace pas le jugement, elle libère du temps pour l'exercer.</p>
+    </div>
+
+    <!-- Modèles — accordéon -->
+    <div class="rv" style="border:1px solid rgba(0,0,0,.09);border-radius:16px;overflow:hidden;background:#eae7e2;margin-bottom:48px;">
+      <div style="padding:20px 24px;border-bottom:1px solid rgba(0,0,0,.07);">
+        <p style="font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(0,0,0,.3);">Modèles utilisés — cliquer pour détails</p>
+      </div>
+      <div id="ia-models-list">
+
+        <div class="ia-model-row-dk" onclick="toggleModelDk(0)" style="border-bottom:1px solid rgba(0,0,0,.07);cursor:pointer;transition:background .2s;" data-open="false">
+          <div style="display:grid;grid-template-columns:28px 1fr auto auto;gap:14px;align-items:center;padding:20px 24px;">
+            <span class="iam-num" style="font-size:10px;font-weight:700;letter-spacing:.15em;color:rgba(0,0,0,.3);transition:color .2s;">01</span>
+            <span class="iam-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(17px,1.8vw,22px);color:#0C0C0C;transition:color .2s;">Claude</span>
+            <span style="font-size:11px;color:rgba(0,0,0,.35);background:rgba(0,0,0,.06);padding:3px 10px;border-radius:100px;">Favori</span>
+            <span class="iam-arr" style="font-size:14px;color:rgba(0,0,0,.2);transition:transform .3s,color .2s;">↓</span>
+          </div>
+          <div class="iam-body" style="max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1),opacity .3s;opacity:0;">
+            <p style="padding:0 24px 20px calc(28px + 14px);font-size:14px;line-height:1.8;color:rgba(0,0,0,.5);">Mon modèle de référence pour la rédaction longue, le prompting complexe et la réflexion structurée. Il raisonne finement, comprend le contexte sur la durée. Utilisé pour les GPTs custom, les audits SEO assistés et toute tâche qui demande de la nuance.</p>
+          </div>
+        </div>
+
+        <div class="ia-model-row-dk" onclick="toggleModelDk(1)" style="border-bottom:1px solid rgba(0,0,0,.07);cursor:pointer;transition:background .2s;" data-open="false">
+          <div style="display:grid;grid-template-columns:28px 1fr auto auto;gap:14px;align-items:center;padding:20px 24px;">
+            <span class="iam-num" style="font-size:10px;font-weight:700;letter-spacing:.15em;color:rgba(0,0,0,.3);transition:color .2s;">02</span>
+            <span class="iam-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(17px,1.8vw,22px);color:rgba(0,0,0,.65);transition:color .2s;">ChatGPT</span>
+            <span style="font-size:11px;color:rgba(0,0,0,.35);background:rgba(0,0,0,.06);padding:3px 10px;border-radius:100px;">Polyvalent</span>
+            <span class="iam-arr" style="font-size:14px;color:rgba(0,0,0,.2);transition:transform .3s,color .2s;">↓</span>
+          </div>
+          <div class="iam-body" style="max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1),opacity .3s;opacity:0;">
+            <p style="padding:0 24px 20px calc(28px + 14px);font-size:14px;line-height:1.8;color:rgba(0,0,0,.5);">Pour la génération rapide de variantes, les brainstorms créatifs et les tâches où la vitesse prime. Utile aussi pour les images via DALL-E et pour tester des formats de contenu en volume.</p>
+          </div>
+        </div>
+
+        <div class="ia-model-row-dk" onclick="toggleModelDk(2)" style="border-bottom:1px solid rgba(0,0,0,.07);cursor:pointer;transition:background .2s;" data-open="false">
+          <div style="display:grid;grid-template-columns:28px 1fr auto auto;gap:14px;align-items:center;padding:20px 24px;">
+            <span class="iam-num" style="font-size:10px;font-weight:700;letter-spacing:.15em;color:rgba(0,0,0,.3);transition:color .2s;">03</span>
+            <span class="iam-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(17px,1.8vw,22px);color:rgba(0,0,0,.55);transition:color .2s;">Perplexity</span>
+            <span style="font-size:11px;color:rgba(0,0,0,.35);background:rgba(0,0,0,.06);padding:3px 10px;border-radius:100px;">Veille</span>
+            <span class="iam-arr" style="font-size:14px;color:rgba(0,0,0,.2);transition:transform .3s,color .2s;">↓</span>
+          </div>
+          <div class="iam-body" style="max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1),opacity .3s;opacity:0;">
+            <p style="padding:0 24px 20px calc(28px + 14px);font-size:14px;line-height:1.8;color:rgba(0,0,0,.5);">Indispensable pour la recherche citée en temps réel. Mon outil de veille quotidienne — je l'utilise chaque matin pour synthétiser l'actu IA, les mises à jour Google Ads et les tendances sectorielles.</p>
+          </div>
+        </div>
+
+        <div class="ia-model-row-dk" onclick="toggleModelDk(3)" style="cursor:pointer;transition:background .2s;" data-open="false">
+          <div style="display:grid;grid-template-columns:28px 1fr auto auto;gap:14px;align-items:center;padding:20px 24px;">
+            <span class="iam-num" style="font-size:10px;font-weight:700;letter-spacing:.15em;color:rgba(0,0,0,.3);transition:color .2s;">04</span>
+            <span class="iam-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(17px,1.8vw,22px);color:rgba(0,0,0,.35);transition:color .2s;">Gemini</span>
+            <span style="font-size:11px;color:rgba(0,0,0,.35);background:rgba(0,0,0,.06);padding:3px 10px;border-radius:100px;">Google</span>
+            <span class="iam-arr" style="font-size:14px;color:rgba(0,0,0,.2);transition:transform .3s,color .2s;">↓</span>
+          </div>
+          <div class="iam-body" style="max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1),opacity .3s;opacity:0;">
+            <p style="padding:0 24px 20px calc(28px + 14px);font-size:14px;line-height:1.8;color:rgba(0,0,0,.5);">Utilisé ponctuellement pour son intégration native avec l'écosystème Google — Sheets, Docs, Search. Pratique pour les analyses de données directement dans les outils clients sans export.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Citation -->
+    <div class="rv" style="padding:32px 36px;border:1px solid rgba(0,0,0,.09);border-radius:16px;border-left:3px solid var(--blue);">
+      <p style="font-size:clamp(15px,1.3vw,18px);font-weight:400;color:rgba(0,0,0,.55);line-height:1.7;font-style:italic;">"L'IA ne remplace pas le jugement — elle libère du temps pour l'exercer. Chaque tâche répétitive identifiée est une cible."</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleModelDk(i){
+    const rows = document.querySelectorAll('.ia-model-row-dk');
+    rows.forEach((r, j) => {
+      const body = r.querySelector('.iam-body');
+      const arr  = r.querySelector('.iam-arr');
+      const num  = r.querySelector('.iam-num');
+      const name = r.querySelector('.iam-name');
+      const isOpen = r.dataset.open === 'true';
+      if(j === i){
+        const willOpen = !isOpen;
+        r.dataset.open = willOpen;
+        body.style.maxHeight = willOpen ? '200px' : '0';
+        body.style.opacity   = willOpen ? '1' : '0';
+        arr.style.transform  = willOpen ? 'rotate(180deg)' : 'rotate(0)';
+        arr.style.color      = willOpen ? 'var(--blue)' : 'rgba(0,0,0,.2)';
+        num.style.color      = willOpen ? 'var(--blue)' : 'rgba(0,0,0,.3)';
+        name.style.color     = willOpen ? 'var(--blue)' : 'rgba(0,0,0,.75)';
+        r.style.background   = willOpen ? 'rgba(37,99,235,.05)' : '';
+      } else {
+        r.dataset.open = 'false';
+        body.style.maxHeight = '0'; body.style.opacity = '0';
+        arr.style.transform = 'rotate(0)'; arr.style.color = 'rgba(0,0,0,.2)';
+        num.style.color = 'rgba(0,0,0,.3)'; name.style.color = 'rgba(0,0,0,.75)';
+        r.style.background = '';
+      }
+    });
+  }
+</script>
+
+<!-- ══ À PROPOS ══ -->
+<section id="apropos" style="background:var(--ink);padding:clamp(80px,12vw,160px) clamp(20px,4vw,72px);">
+  <div style="max-width:1400px;margin:0 auto;">
+
+    <div class="rv" style="margin-bottom:56px;">
+      <p class="section-label" style="margin-bottom:16px;">À propos</p>
+      <h2 class="section-title-lt">Le reste<br>de l'iceberg</h2>
+      <p style="font-size:clamp(15px,1.4vw,20px);font-weight:300;color:rgba(255,255,255,.35);margin-top:20px;line-height:1.65;max-width:520px;">Ce qui ne rentre pas dans un CV mais qui façonne la façon dont je travaille.</p>
+    </div>
+
+    <!-- Intérêts -->
+    <div class="rv" style="margin-bottom:48px;max-width:720px;">
+      <p style="font-size:clamp(15px,1.3vw,18px);line-height:1.9;color:rgba(255,255,255,.5);font-weight:300;">
+        J'ai 21 ans, je vis à Limoges. À 18 ans j'ai tenté de lancer une micro-entreprise, ça n'a pas abouti, mais ça m'a appris ce que ça coûte vraiment de se confronter au terrain sans filet. Je fais du sport régulièrement, foot, muscu, tennis, la compétition me motive autant dans le boulot que dans la vie. Je m'intéresse à l'investissement, ETF, marchés, un peu de crypto, avec la même logique qu'en campagne : analyser, décider, ajuster. Et l'IA, c'est une vraie passion. Je teste chaque sortie notable dans la journée, pas par obligation, juste parce que ça m'intéresse vraiment.
+      </p>
+    </div>
+
+    <!-- Citation -->
+    <div class="rv" style="padding:32px 40px;border:1px solid rgba(255,255,255,.08);border-radius:16px;border-left:3px solid var(--blue);">
+      <p style="font-size:clamp(15px,1.3vw,18px);font-weight:400;color:rgba(255,255,255,.55);line-height:1.7;font-style:italic;">"J'optimise tout ce que je touche — mes prompts, mes placements, mon organisation. Pas par perfectionnisme, mais parce que j'aime comprendre comment les choses fonctionnent."</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" style="position:relative;background:var(--ink);padding:clamp(100px,14vw,180px) clamp(20px,4vw,72px);text-align:center;overflow:hidden;">
+  <div class="noise"></div>
+  <div class="orb" style="width:600px;height:600px;background:var(--blue);bottom:-260px;right:-140px;opacity:.06;animation:orb2 22s ease-in-out infinite;"></div>
+  <div class="orb" style="width:360px;height:360px;background:var(--blue);top:-100px;left:-80px;opacity:.04;animation:orb1 18s ease-in-out infinite;"></div>
+  <div style="position:relative;z-index:10;max-width:1400px;margin:0 auto;">
+    <div class="rv">
+      <p class="section-label" style="margin-bottom:32px;">Contact</p>
+      <h2 class="cta-title" style="color:white;margin-bottom:12px;">On collabore</h2>
+      <h2 class="cta-title" style="color:rgba(255,255,255,.14);margin-bottom:40px;">ensemble&nbsp;?</h2>
+      <p style="font-size:clamp(14px,1.2vw,18px);font-weight:300;max-width:400px;margin:0 auto 44px;line-height:1.8;color:rgba(255,255,255,.35);">
+        Disponible pour des projets, missions freelance, ou un échange sur le marketing digital et l'IA.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;">
+        <a href="mailto:rivierealex5@gmail.com" class="mag" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:white;color:#060606;font-size:14px;font-weight:600;text-decoration:none;" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          rivierealex5@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/alexandre-riviere-marketing/" target="_blank" rel="noopener" class="mag" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:white;font-size:14px;font-weight:600;text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,.11)'" onmouseout="this.style.background='rgba(255,255,255,.07)'">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:22px clamp(20px,4vw,72px);">
+  <div style="max-width:1400px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;font-size:12px;color:rgba(255,255,255,.2);">
+    <span>© 2025 Alexandre <strong style="color:rgba(255,255,255,.32);font-weight:600;">RIVIÈRE</strong></span>
+    <span>Marketing Digital · Limoges, France</span>
+  </div>
+</footer>
+
+<!-- ══ JS GLOBAL ══ -->
+<script>
+(() => {
+  'use strict';
+
+  /* ── EXP DATA ── */
+  const EXP = [
+    { date:'2025 — 2027', type:'Alternance', company:'CrazyEight', role:'Marketing Digital', context:'Google Ads · SEO · Automatisation · Multi-clients', status:'En cours',
+      tags:['Google Ads','SEO','Automatisation'],
+      metrics:[{v:'500 €',l:'Budget Ads / client / mois'},{v:'Search + PMax',l:'Campagnes pilotées'},{v:'Multi-clients',l:'Secteurs variés'}],
+      desc:"Agence de marketing digital basée à Limoges, spécialisée dans l'acquisition et la visibilité en ligne pour un portefeuille de clients multi-secteurs.",
+      intro:"Plusieurs comptes à gérer en simultané, des budgets réels, des résultats attendus chaque semaine.",
+      tasks:["Campagnes Google Ads Search + Performance Max et Meta Ads : structuration, paramétrage, optimisation hebdomadaire","Audits SEO complets via Screaming Frog et Semrush : indexation, balises, maillage interne","Dashboards Looker Studio livrés aux clients, configuration GA4 + GTM","Intégration IA : GPTs custom pour contenu, automatisation reporting Slack"],
+      quote:"Gérer plusieurs comptes en simultané m'a appris une chose : l'urgence et l'importance ne sont jamais au même endroit.",
+      allTags:['Google Ads Search','Performance Max','Meta Ads','SEO technique','GTM','GA4','Looker Studio','Semrush','Screaming Frog','GPTs custom','Automatisation Slack'] },
+    { date:'Fév — Juin 2025', type:'Stage · Communication', company:'Wisy', role:'Communication Digitale', context:'Stratégie Marketing · Création de Contenus · IA',
+      tags:['Communication','Stratégie Marketing','IA'],
+      metrics:[{v:'6 mois',l:'Immersion complète'},{v:'GPT custom',l:'Déployé en production'},{v:'Multi-formats',l:'Print · Web · Social'}],
+      desc:"Entreprise de Services du Numérique (ESN) basée en Corrèze, accompagnant PME et collectivités.",
+      intro:"Mission communication pour donner de la visibilité à une structure technique peu habituée à se raconter.",
+      tasks:["Création de contenus LinkedIn (posts, carrousels), newsletters et scripts","Séquences de prospection Waalaxy : ciblage B2B, rédaction des messages","Construction d'un GPT custom calé sur la voix de marque Wisy","Visuels Canva et planification éditoriale via Swello"],
+      quote:"Faire du marketing pour une ESN, c'est apprendre à rendre le complexe simple.",
+      allTags:['Stratégie marketing','Prospection LinkedIn','Waalaxy','GPT Custom','Voix de marque','Copywriting','Canva','Swello'] },
+    { date:'Avr — Juil 2024', type:'Stage · Malte', company:'Kempinski Hotel', role:'Service Client Luxe 5★', context:'Hôtellerie Luxe · 100 % Anglophone · Gozo, Malte', badge:'Gozo, Malte',
+      tags:['Service Client','Luxe 5★','Anglophone'],
+      metrics:[{v:'3 mois',l:'Immersion internationale'},{v:'5 ★',l:'Standard luxe',gold:true},{v:'100 %',l:'En anglais'}],
+      desc:"Établissement cinq étoiles sur l'île de Gozo, Malte — clientèle internationale, standards premium.",
+      intro:"Cinq mois dans un environnement où l'exigence n'est pas négociable.",
+      tasks:["Service client en anglais auprès d'une clientèle internationale","Gestion logistique des séjours et coordination entre services","Formation et intégration de nouveaux membres d'équipe","Travail en équipe multiculturelle haute exigence"],
+      quote:"Cinq mois à Malte pour comprendre ce que signifie vraiment l'excellence de service.",
+      allTags:['Anglais courant','Service client premium','Hôtellerie luxe','Gestion logistique','Formation équipe','Adaptabilité'] },
+    { date:'Nov 2023 — Mar 2024', type:'Tutorat entreprise', company:'La Manufacture À Talents', role:'Communication', context:'Réseaux Sociaux · Création de Contenus · Print',
+      tags:['Communication','Réseaux Sociaux','Print'],
+      metrics:[],
+      desc:"Organisme de formation habilité CPF, accompagnant lycéens et étudiants en Corrèze.",
+      intro:"Première mission de communication complète, du brief à la livraison.",
+      tasks:["Gestion des réseaux sociaux : ligne éditoriale, calendrier, visuels","Carrousels LinkedIn ciblant les familles et les prescripteurs","Création de flyers et affiches print, du brief à la livraison"],
+      quote:"Communiquer pour des personnes en recherche de sens m'a appris que les mots ont un poids.",
+      allTags:['Stratégie de marque','Réseaux sociaux','Carrousels LinkedIn','Copywriting','Flyers / Print'] },
+    { date:'Avr — Juin 2023', type:'Stage · Commercial', company:'Delouis Fils', role:'Actions commerciales', context:'Action Commerciale · Relation Client · Data · PLV',
+      tags:['Action Commerciale','Relation Client','Data'],
+      metrics:[],
+      desc:"Maison fondée en 1885, spécialisée dans les condiments haut de gamme — positionnée premium bio et épicerie fine.",
+      intro:"Deux mois dans une PME familiale avec des standards précis.",
+      tasks:["Relation client : suivi des comptes, traitement des demandes","Catalogues produits et supports PLV","Tableaux Excel de suivi commercial : saisie et structuration"],
+      quote:"Une maison de 140 ans avec des process rodés. J'ai appris à m'adapter à une culture établie.",
+      allTags:['Relation client','Catalogue','Excel','PLV','Action commerciale'] },
+    { date:'2022 · 18 ans', type:'Initiative perso', company:'Micro-entreprise', role:'Fondateur', context:'Communication · Prospection · Gestion autonome',
+      tags:['Fondateur','Prospection','Autonomie'],
+      metrics:[],
+      desc:"Initiative personnelle lancée à 18 ans — création de la structure, prospection, premières confrontations avec le terrain.",
+      intro:"Aucun client acquis. Mais une première confrontation directe avec la réalité de se lancer seul.",
+      tasks:["Création et immatriculation de la micro-entreprise","Cold calling : préparation des scripts, premiers appels, gestion des refus","Gestion administrative d'une structure indépendante"],
+      quote:"Aucun client, mais une leçon durable : se lancer sans garantie, c'est déjà savoir que l'échec ne tue pas.",
+      allTags:["Création d'entreprise",'Cold calling','Pitch commercial','Autonomie'] },
+  ];
+
+  /* ── RENDER EXP CARDS ── */
+  const grid = document.getElementById('exp-grid');
+  EXP.forEach((exp, i) => {
+    const card = document.createElement('div');
+    card.className = 'exp-card rv' + (i>0?' rv'+Math.min(i,5):'');
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-label',`Voir les détails de ${exp.company}`);
+
+    card.innerHTML = `
+      <div class="exp-card-num">${String(i+1).padStart(2,'0')}</div>
+      <div class="exp-card-company">${exp.company}</div>
+      <div class="exp-card-role">${exp.role}<br><span style="color:rgba(255,255,255,.25);font-size:11px;">${exp.context}</span></div>
+      <div class="exp-card-footer">
+        <span class="exp-card-date">${exp.date}</span>
+        <span class="exp-card-cta"><span class="dot"></span>Développer</span>
+      </div>`;
+
+    card.addEventListener('click', () => openModal(i));
+    card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') openModal(i); });
+    grid.appendChild(card);
+  });
+
+  /* ── MODAL ── */
+  const overlay = document.getElementById('modal-overlay');
+  const content = document.getElementById('modal-content');
+  const closeBtn = document.getElementById('modal-close');
+
+  function openModal(idx){
+    const e = EXP[idx];
+    const metrics = e.metrics.length ? `<hr class="modal-divider"><p class="modal-label">Chiffres clés</p><div class="modal-metrics">${e.metrics.map(m=>`<div class="modal-metric"><div class="modal-metric-val"${m.gold?' style="color:#FCD34D;"':''}>${m.v}</div><div class="modal-metric-lbl">${m.l}</div></div>`).join('')}</div>` : '';
+    const tasks = e.tasks.length ? `<hr class="modal-divider"><p class="modal-label">Missions</p><ul class="modal-tasks">${e.tasks.map(t=>`<li>${t}</li>`).join('')}</ul>` : '';
+    const tags = (e.allTags||e.tags).map(t=>`<span class="badge badge-dk">${t}</span>`).join('');
+
+    content.innerHTML = `
+      <div class="modal-eyebrow">
+        <span>${e.date}</span>
+        ${e.type?`<span class="badge badge-dk">${e.type}</span>`:''}
+        ${e.status?`<span class="badge badge-gn"><span style="width:5px;height:5px;border-radius:50%;background:#4ade80;display:inline-block;animation:pulse 2s infinite;"></span>${e.status}</span>`:''}
+        ${e.badge?`<span class="badge badge-dk">${e.badge}</span>`:''}
+      </div>
+      <div style="width:24px;height:2px;background:var(--blue);border-radius:2px;margin-bottom:14px;"></div>
+      <h2 class="modal-company" id="modal-title">${e.company}</h2>
+      <p class="modal-role">${e.role} · <span style="color:rgba(255,255,255,.28);">${e.context}</span></p>
+      <hr class="modal-divider">
+      <p class="modal-label">Contexte</p>
+      <p class="modal-body">${e.desc}</p>
+      ${e.intro?`<p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.38);margin-top:10px;font-style:italic;">${e.intro}</p>`:''}
+      ${metrics}${tasks}
+      ${e.quote?`<blockquote class="modal-quote">${e.quote}</blockquote>`:''}
+      <hr class="modal-divider">
+      <p class="modal-label">Compétences</p>
+      <div class="modal-tags">${tags}</div>`;
+
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    closeBtn.focus();
+  }
+
+  function closeModal(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if(e.target===overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+  /* ── LOADER ── */
+  window.addEventListener('load', () => setTimeout(()=>document.getElementById('loader').classList.add('gone'), 800));
+
+  /* ── CURSOR ── */
+  const dot=document.getElementById('cur-dot'), ring=document.getElementById('cur-ring');
+  let mx=-200,my=-200,rx=-200,ry=-200;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  document.addEventListener('mouseleave',()=>{mx=-200;my=-200;});
+  (function loop(){ dot.style.transform=`translate(${mx-4}px,${my-4}px)`; rx+=(mx-rx)*.1;ry+=(my-ry)*.1; ring.style.transform=`translate(${rx-19}px,${ry-19}px)`; requestAnimationFrame(loop); })();
+  document.querySelectorAll('a,button,.exp-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ring.style.width=ring.style.height='50px';ring.style.borderColor='rgba(37,99,235,.4)';});
+    el.addEventListener('mouseleave',()=>{ring.style.width=ring.style.height='38px';ring.style.borderColor='rgba(255,255,255,.2)';});
+  });
+
+  /* ── SCROLL ── */
+  const bar=document.getElementById('progress'), nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{
+    bar.style.width=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+'%';
+  },{passive:true});
+
+  const spy=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) document.querySelectorAll('.nav-links a[data-section]').forEach(l=>l.classList.toggle('active',l.dataset.section===e.target.id));
+    });
+  },{threshold:.3});
+  document.querySelectorAll('section[id]').forEach(s=>spy.observe(s));
+
+  /* ── REVEAL ── */
+  const revObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});
+  },{threshold:.07,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>revObs.observe(el));
+
+  /* ── 3D TILT ── */
+  document.querySelectorAll('.exp-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(800px) rotateX(${y*-4}deg) rotateY(${x*4}deg)`;
+    });
+    card.addEventListener('mouseleave',()=>card.style.transform='');
+  });
+
+  /* ── MAG ── */
+  document.querySelectorAll('.mag').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{
+      const r=btn.getBoundingClientRect();
+      btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.2}px)`;
+    });
+    btn.addEventListener('mouseleave',()=>btn.style.transform='');
+  });
+
+  /* ── HAMBURGER ── */
+  const ham=document.getElementById('ham'), mMenu=document.getElementById('mobile-menu');
+  ham.addEventListener('click',()=>{
+    const open=ham.classList.toggle('open');
+    ham.setAttribute('aria-expanded',open);
+    mMenu.classList.toggle('open',open);
+    document.body.style.overflow=open?'hidden':'';
+  });
+  mMenu.querySelectorAll('.mob-link').forEach(l=>l.addEventListener('click',()=>{
+    ham.classList.remove('open'); ham.setAttribute('aria-expanded','false');
+    mMenu.classList.remove('open'); document.body.style.overflow='';
+  }));
+
+})();
+</script>
+
 </body>
 </html>
