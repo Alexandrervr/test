@@ -1,6 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var A=["https://claude.ai","https://preview.claude.ai","https://eap-omelette.claude.ai"];var L=30000;var u=3000;document.addEventListener("DOMContentLoaded",()=>{const V=window.Babel;const $="om-src-id";if(V&&V.registerPlugin&&!(V.availablePlugins&&V.availablePlugins[$])){V.registerPlugin($,({types:Q})=>({visitor:{JSXOpeningElement(W,X){const K=W.node;if(K.name&&K.name.type==="JSXMemberExpression")return;for(let J=0;J<K.attributes.length;J++){const w=K.attributes[J];if(w.type==="JSXAttribute"&&w.name&&w.name.name==="data-om-id")return}const z=X.file&&X.file.opts&&X.file.opts.filename||"?";const k=K.loc&&K.loc.start;const C=`jsx:${z}:${K.start??0}:${k?k.line:0}:${k?k.column+1:0}`;K.attributes.push(Q.jsxAttribute(Q.jsxIdentifier("data-om-id"),Q.stringLiteral(C)))}}}))}const Z=["transform-react-jsx-source",$];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Q,W)=>{const X=Q.getAttribute("data-plugins")||"";const K=Z.filter((z)=>X.indexOf(z)<0);if(K.length){Q.setAttribute("data-plugins",X?`${X},${K.join(",")}`:K.join(","))}if(!Q.hasAttribute("data-filename")){Q.setAttribute("data-filename",Q.getAttribute("src")||`inline-${W}`)}})});var b=window.parent;if(b&&b!==window){const V=(z,k)=>{try{b.postMessage({__omelette_log:true,type:z,data:k},"*")}catch{}};["log","warn","error"].forEach((z)=>{const k=console[z];console[z]=(...C)=>{const J=C.map((w)=>{try{return typeof w==="object"?JSON.stringify(w):String(w)}catch{try{return String(w)}catch{return"[unstringifiable]"}}}).join(" ");V(z,J);k.apply(console,C)}});window.addEventListener("error",(z)=>{const k=z.target;if(k&&k!==window&&k.tagName){const C=k.src||k.href||"";V("resource_error",`${k.tagName} failed to load: ${C}`)}else{V("error",`${z.message||"Unknown error"} at ${z.filename||"?"}:${z.lineno||0}:${z.colno||0}`)}},true);window.addEventListener("unhandledrejection",(z)=>{const k=z.reason;const C=k instanceof Error?`${k.message} ${k.stack}`:String(k);V("error",`Unhandled rejection: ${C}`)});const $=()=>{try{b.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")$();else window.addEventListener("load",$);if(window.ResizeObserver)new ResizeObserver($).observe(document.documentElement);const Z={};let Q=0;window.claude={complete(z){return new Promise((k,C)=>{if(!A.length){C(new Error("claude.complete: no parent origin"));return}const J=`c${++Q}`;const w=()=>setTimeout(()=>{delete Z[J];C(new Error(`claude.complete: no data for ${L/1000}s`))},L);const Y=w();Z[J]={resolve:k,reject:C,text:"",t:Y,arm:w};try{for(const F of A){b.postMessage({__om_api:true,id:J,body:z},F)}}catch(F){clearTimeout(Y);delete Z[J];C(F)}})}};const W={};let X=0;window.omelette={writeFile:(z,k)=>new Promise((C,J)=>{if(!A.length){C();return}const w=`f${++X}`;const Y=setTimeout(()=>{delete W[w];C()},u);W[w]={resolve:C,reject:J,t:Y};try{for(const F of A){b.postMessage({__om_file:true,id:w,op:"write",path:z,content:k},F)}}catch{clearTimeout(Y);delete W[w];C()}})};const K=(z)=>{try{return JSON.stringify(z)}catch{return JSON.stringify(String(z))}};window.addEventListener("message",(z)=>{if(A.indexOf(z.origin)<0)return;if(z.source!==b)return;const k=z.data;if(!k)return;if(k.__om_file_r){const w=W[k.id];if(!w)return;clearTimeout(w.t);delete W[k.id];if(k.ok)w.resolve();else w.reject(new Error(k.error||"write failed"));return}if(k.__om_api_r){const w=Z[k.id];if(!w)return;if(k.error!=null){clearTimeout(w.t);delete Z[k.id];w.reject(new Error(k.error));return}if(k.chunk!=null){clearTimeout(w.t);w.t=w.arm();w.text+=k.chunk;return}if(k.done){clearTimeout(w.t);delete Z[k.id];w.resolve(k.text!=null?k.text:w.text);return}return}if(!k.__om_eval)return;const C=k;const J=(w)=>{z.source.postMessage({...w,__om_eval_r:1,id:C.id},z.origin)};try{const w=(0,eval)(C.code);if(w&&typeof w.then==="function"){w.then((Y)=>J({ok:1,v:K(Y)}),(Y)=>J({ok:0,e:String(Y)}))}else{J({ok:1,v:K(w)})}}catch(w){J({ok:0,e:String(w)})}})}})();
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alexandre RIVIÈRE — Marketing Digital</title>
@@ -76,45 +80,45 @@
       z-index:200;width:auto;min-width:0;
     }
     .nav-inner {
-      display:flex;align-items:center;gap:4px;
-      height:44px;padding:4px;
-      background:rgba(14,14,14,.8);
+      display:flex;align-items:center;gap:2px;
+      height:48px;padding:6px 6px 6px 18px;
+      background:rgba(14,14,14,.82);
       backdrop-filter:blur(32px) saturate(180%);
       -webkit-backdrop-filter:blur(32px) saturate(180%);
-      border:1px solid rgba(255,255,255,.09);
-      border-radius:14px;
-      box-shadow:0 4px 20px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:100px;
+      box-shadow:0 4px 24px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.07);
       white-space:nowrap;
     }
     .nav-logo {
       font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13.5px;
       letter-spacing:-.01em;color:white;text-decoration:none;flex-shrink:0;
-      padding:0 14px 0 10px;
-      border-right:1px solid rgba(255,255,255,.07);
-      margin-right:2px;
-      line-height:36px;
+      padding-right:16px;
+      border-right:1px solid rgba(255,255,255,.08);
+      margin-right:4px;
+      line-height:1;
     }
     .nav-logo strong { color:var(--blue); }
-    .nav-links { display:flex;align-items:center;gap:1px;list-style:none;flex-shrink:0; }
+    .nav-links { display:flex;align-items:center;gap:0px;list-style:none;flex-shrink:0; }
     .nav-links a {
       display:flex;align-items:center;
-      padding:0 12px;height:36px;
+      padding:0 13px;height:36px;
       font-size:12.5px;font-weight:500;
       color:rgba(255,255,255,.42);
-      text-decoration:none;border-radius:10px;
+      text-decoration:none;border-radius:100px;
       transition:color .18s,background .18s;
       white-space:nowrap;
     }
-    .nav-links a:hover,.nav-links a.active { color:rgba(255,255,255,.9);background:rgba(255,255,255,.08); }
+    .nav-links a:hover,.nav-links a.active { color:rgba(255,255,255,.9);background:rgba(255,255,255,.09); }
     .nav-cta {
       display:inline-flex;align-items:center;gap:6px;
-      padding:0 14px;height:36px;
-      border-radius:10px;
+      padding:0 16px;height:36px;
+      border-radius:100px;
       background:var(--blue);color:white!important;
       font-size:12.5px;font-weight:600;
       text-decoration:none;flex-shrink:0;
       transition:opacity .18s;
-      margin-left:2px;
+      margin-left:4px;
     }
     .nav-cta:hover { opacity:.85; }
     #ham { display:none;flex-direction:column;gap:5px;background:none;border:none;padding:10px;cursor:pointer!important; }
@@ -272,6 +276,27 @@
     .hc-card:hover .hc-label { opacity:1; }
     @media(max-width:960px){ #hero-carousel{display:none} }
 
+    /* ── MOBILE STRIP ── */
+    #hero-strip { display:none; }
+    @media(max-width:960px){
+      #hero-strip {
+        display:flex;gap:10px;
+        overflow-x:auto;-webkit-overflow-scrolling:touch;
+        scroll-snap-type:x mandatory;
+        padding:0 clamp(20px,4vw,72px) 0;
+        margin-top:36px;
+        -ms-overflow-style:none;scrollbar-width:none;
+      }
+      #hero-strip::-webkit-scrollbar { display:none; }
+      #hero-strip .hs-card {
+        flex-shrink:0;width:180px;height:220px;
+        border-radius:12px;overflow:hidden;
+        border:1px solid rgba(255,255,255,.07);
+        scroll-snap-align:start;
+      }
+      #hero-strip .hs-card img { width:100%;height:100%;object-fit:cover;display:block; }
+    }
+
     /* ── MOBILE ── */
     @media(max-width:640px){
       .hero-name { white-space:normal!important;font-size:clamp(38px,12vw,72px)!important;line-height:1.05!important; }
@@ -329,7 +354,7 @@
       <li><a href="#ia" data-section="ia">IA</a></li>
       <li><a href="#apropos" data-section="apropos">À propos</a></li>
     </ul>
-    <a href="mailto:rivierealex5@gmail.com" class="nav-cta mag">
+    <a href="/cdn-cgi/l/email-protection#17657e617e726572767b726f2257707a767e7b3974787a" class="nav-cta mag">
       Parlons-en
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
     </a>
@@ -343,7 +368,7 @@
   <a href="#formation" class="mob-link">Formation</a>
   <a href="#ia" class="mob-link">IA</a>
   <a href="#apropos" class="mob-link">À propos</a>
-  <a href="mailto:rivierealex5@gmail.com" class="mob-cta mob-link">Parlons-en →</a>
+  <a href="/cdn-cgi/l/email-protection#02706b746b677067636e677a3742656f636b6e2c616d6f" class="mob-cta mob-link">Parlons-en →</a>
 </div>
 
 <!-- ══ HERO ══ -->
@@ -439,6 +464,18 @@
     </div>
   </div>
 
+  <!-- Strip mobile -->
+  <div id="hero-strip" aria-hidden="true">
+    <div class="hs-card"><img src="images/google-ads-crazy-eight.png" alt="" loading="lazy"></div>
+    <div class="hs-card"><img src="images/audit-seo-perso.png" alt="" loading="lazy"></div>
+    <div class="hs-card"><img src="images/posts-vintage-wisy.png" alt="" loading="lazy"></div>
+    <div class="hs-card"><img src="images/formation-ia-perso.png" alt="" loading="lazy"></div>
+    <div class="hs-card"><img src="images/data-campagne-30-jours.png" alt="" loading="lazy"></div>
+    <div class="hs-card"><img src="images/mon-notion-perso.png" alt="" loading="lazy"></div>
+    <div class="hs-card"><img src="images/ticket-or-wisy.png" alt="" loading="lazy"></div>
+    <div class="hs-card"><img src="images/banniere-perso.png" alt="" loading="lazy"></div>
+  </div>
+
   <!-- Ticker -->
   <div style="position:absolute;bottom:0;left:0;right:0;border-top:1px solid rgba(255,255,255,.05);overflow:hidden;">
     <div style="display:flex;width:max-content;animation:mq 30s linear infinite;">
@@ -489,7 +526,7 @@
   .mf-line { transform:translateY(110%);opacity:0;transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .6s ease; }
   .mf-line.on { transform:translateY(0);opacity:1; }
 </style>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   (function(){
     document.querySelectorAll('.mf-wrap').forEach(wrap => {
       const line = wrap.querySelector('.mf-line');
@@ -886,21 +923,19 @@
 
 <!-- ══ CONTACT ══ -->
 <section id="contact" style="position:relative;background:var(--ink);padding:clamp(100px,14vw,180px) clamp(20px,4vw,72px);text-align:center;overflow:hidden;">
+  <div class="grid-bg"></div>
   <div class="noise"></div>
-  <div class="orb" style="width:600px;height:600px;background:var(--blue);bottom:-260px;right:-140px;opacity:.06;animation:orb2 22s ease-in-out infinite;"></div>
-  <div class="orb" style="width:360px;height:360px;background:var(--blue);top:-100px;left:-80px;opacity:.04;animation:orb1 18s ease-in-out infinite;"></div>
+  <div class="orb" style="width:700px;height:700px;background:var(--blue);bottom:-300px;right:-180px;opacity:.09;animation:orb2 22s ease-in-out infinite;"></div>
+  <div class="orb" style="width:500px;height:500px;background:var(--blue);top:-160px;left:-120px;opacity:.07;animation:orb1 18s ease-in-out infinite;"></div>
   <div style="position:relative;z-index:10;max-width:1400px;margin:0 auto;">
     <div class="rv">
       <p class="section-label" style="margin-bottom:32px;">Contact</p>
-      <h2 class="cta-title" style="color:white;margin-bottom:12px;">On collabore</h2>
-      <h2 class="cta-title" style="color:rgba(255,255,255,.14);margin-bottom:40px;">ensemble&nbsp;?</h2>
-      <p style="font-size:clamp(14px,1.2vw,18px);font-weight:300;max-width:400px;margin:0 auto 44px;line-height:1.8;color:rgba(255,255,255,.35);">
-        Disponible pour des projets, missions freelance, ou un échange sur le marketing digital et l'IA.
-      </p>
+      <h2 class="cta-title" style="color:white;margin-bottom:0;">On collabore</h2>
+      <h2 class="cta-title" style="color:rgba(255,255,255,.12);margin-bottom:44px;">ensemble&nbsp;?</h2>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;">
-        <a href="mailto:rivierealex5@gmail.com" class="mag" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:white;color:#060606;font-size:14px;font-weight:600;text-decoration:none;" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
+        <a href="/cdn-cgi/l/email-protection#8cfee5fae5e9fee9ede0e9f4b9ccebe1ede5e0a2efe3e1" class="mag" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:white;color:#060606;font-size:14px;font-weight:600;text-decoration:none;" onmouseover="this.style.opacity='.9'" onmouseout="this.style.opacity='1'">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          rivierealex5@gmail.com
+          <span class="__cf_email__" data-cfemail="6d1f041b04081f080c010815582d0a000c0401430e0200">[email&#160;protected]</span>
         </a>
         <a href="https://www.linkedin.com/in/alexandre-riviere-marketing/" target="_blank" rel="noopener" class="mag" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:white;font-size:14px;font-weight:600;text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,.11)'" onmouseout="this.style.background='rgba(255,255,255,.07)'">
           <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -919,7 +954,7 @@
 </footer>
 
 <!-- ══ JS GLOBAL ══ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (() => {
   'use strict';
 
