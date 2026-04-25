@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx uipro-cli *)",
+      "Bash(sudo rm *)",
+      "Bash(npm cache *)",
+      "Bash(npx --cache /tmp/npm-cache uipro-cli init --ai claude)",
+      "WebFetch(domain:alexandrervr.github.io)",
+      "Bash(python3 skills/ui-ux-pro-max/scripts/search.py \"personal portfolio developer creative professional\" --design-system -p \"Alexandre Riviere\")",
+      "WebFetch(domain:ctrl.xyz)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__javascript_tool",
+      "Bash(python3 ~/.claude/skills/ui-ux-pro-max/scripts/search.py \"personal portfolio marketing digital professional dark bold\" --design-system -p \"Alexandre Riviere\")",
+      "Bash(mv \"4 familles Wisy.png\"                                    \"4-familles-wisy.png\")",
+      "Bash(mv \"Affiche perso.png\"                                      \"affiche-perso.png\")",
+      "Bash(mv \"Audit SEO perso.png\"                                    \"audit-seo-perso.png\")",
+      "Bash(mv \"Bannière perso.png\"                                     \"banniere-perso.png\")",
+      "Bash(mv \"Billet d'avion Wisy.png\"                                \"billet-avion-wisy.png\")",
+      "Bash(python3 -c \"import os; os.rename\\(\\\\\"/Users/alexandre/Projet site/images/L'histoire de.png\\\\\", '/Users/alexandre/Projet site/images/lhistoire-de.png'\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
