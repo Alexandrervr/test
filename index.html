@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -348,6 +347,7 @@
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">Alexandre <strong>RIVIÈRE</strong></a>
     <ul class="nav-links" role="list">
+      <li><a href="#portfolio" data-section="portfolio">Portfolio</a></li>
       <li><a href="#experiences" data-section="experiences">Expériences</a></li>
       <li><a href="#savoir-faire" data-section="savoir-faire">Savoir-faire</a></li>
       <li><a href="#formation" data-section="formation">Formation</a></li>
@@ -363,6 +363,7 @@
 </nav>
 
 <div id="mobile-menu" role="dialog" aria-modal="true">
+  <a href="#portfolio" class="mob-link">Portfolio</a>
   <a href="#experiences" class="mob-link">Expériences</a>
   <a href="#savoir-faire" class="mob-link">Savoir-faire</a>
   <a href="#formation" class="mob-link">Formation</a>
@@ -502,6 +503,303 @@
     </div>
   </div>
 </section>
+
+<!-- ══ PORTFOLIO ══ -->
+<style>
+  /* ── PORTFOLIO STICKY SCROLL ── */
+  .pf-section {
+    position: relative;
+    height: 320vh;
+    background: var(--ink);
+  }
+  .pf-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+  .pf-header {
+    padding: 0 clamp(20px,4vw,72px);
+    margin-bottom: clamp(36px,5vw,56px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .pf-header-right {
+    font-size: 12px;
+    color: rgba(255,255,255,.2);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: .05em;
+  }
+  .pf-progress-bar {
+    width: 80px;
+    height: 1px;
+    background: rgba(255,255,255,.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .pf-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--blue);
+    border-radius: 2px;
+    transition: width .05s linear;
+  }
+  .pf-rows {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px,1.2vw,16px);
+    overflow: hidden;
+  }
+  .pf-row {
+    overflow: hidden;
+    position: relative;
+    /* Fade edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  }
+  .pf-track {
+    display: flex;
+    gap: clamp(10px,1vw,14px);
+    width: max-content;
+    will-change: transform;
+  }
+  .pf-card {
+    width: clamp(220px,24vw,340px);
+    height: clamp(150px,15vw,220px);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.07);
+    flex-shrink: 0;
+    background: #111;
+    position: relative;
+  }
+  .pf-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .pf-card:hover img { transform: scale(1.04); }
+  .pf-card-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 20px 10px 7px;
+    background: linear-gradient(transparent, rgba(0,0,0,.75));
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+    opacity: 0;
+    transition: opacity .25s;
+  }
+  .pf-card:hover .pf-card-label { opacity: 1; }
+
+  .pf-scroll-hint {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.18);
+    pointer-events: none;
+    transition: opacity .4s;
+    white-space: nowrap;
+  }
+  .pf-scroll-hint svg { animation: bounceY 2s ease-in-out infinite; }
+
+  /* ── MOBILE: marquees CSS auto-scroll ── */
+  @media(max-width:768px) {
+    .pf-section { height: auto; }
+    .pf-sticky {
+      position: relative;
+      height: auto;
+      padding: clamp(64px,10vw,96px) 0;
+      gap: clamp(10px,2vw,16px);
+      justify-content: flex-start;
+    }
+    .pf-header { margin-bottom: 32px; }
+    .pf-header-right { display: none; }
+    .pf-card {
+      width: clamp(180px,48vw,240px);
+      height: clamp(120px,30vw,160px);
+    }
+    .pf-scroll-hint { display: none; }
+    /* Auto-scroll via CSS on mobile */
+    .pf-track-1-mob { animation: pfScrollRight 28s linear infinite; }
+    .pf-track-2-mob { animation: pfScrollLeft 34s linear infinite; }
+    @keyframes pfScrollRight { from { transform: translateX(-50%); } to { transform: translateX(0%); } }
+    @keyframes pfScrollLeft  { from { transform: translateX(0%); } to { transform: translateX(-50%); } }
+    /* Disable JS-driven scroll on mobile — keep CSS anim */
+    .pf-track { will-change: auto; }
+  }
+</style>
+
+<section id="portfolio" class="pf-section">
+  <div class="pf-sticky">
+    <!-- Header -->
+    <div class="pf-header">
+      <div>
+        <p class="section-label" style="margin-bottom:14px;">Portfolio</p>
+        <h2 class="section-title-lt">Ce que<br>j'ai produit</h2>
+      </div>
+      <div class="pf-header-right">
+        <div class="pf-progress-bar"><div class="pf-progress-fill" id="pf-fill"></div></div>
+        Scroll pour explorer
+      </div>
+    </div>
+
+    <!-- Image rows -->
+    <div class="pf-rows">
+      <!-- Row 1 → moves right when scrolling down -->
+      <div class="pf-row">
+        <div class="pf-track pf-track-1-mob" id="pf-track-1">
+          <!-- Set A -->
+          <div class="pf-card"><img src="images/google-ads-crazy-eight.png" alt="Google Ads" loading="lazy"><span class="pf-card-label">CrazyEight · Google Ads</span></div>
+          <div class="pf-card"><img src="images/audit-seo-perso.png" alt="Audit SEO" loading="lazy"><span class="pf-card-label">Perso · Audit SEO</span></div>
+          <div class="pf-card"><img src="images/posts-vintage-wisy.png" alt="Posts Wisy" loading="lazy"><span class="pf-card-label">Wisy · Social Posts</span></div>
+          <div class="pf-card"><img src="images/formation-ia-perso.png" alt="Formation IA" loading="lazy"><span class="pf-card-label">Formation IA</span></div>
+          <div class="pf-card"><img src="images/data-campagne-30-jours.png" alt="Data" loading="lazy"><span class="pf-card-label">Campagne 30j · Data</span></div>
+          <div class="pf-card"><img src="images/mon-notion-perso.png" alt="Notion" loading="lazy"><span class="pf-card-label">Système Notion</span></div>
+          <div class="pf-card"><img src="images/affiche-perso.png" alt="Affiche" loading="lazy"><span class="pf-card-label">Création · Affiche</span></div>
+          <div class="pf-card"><img src="images/planning-crazy-eight.png" alt="Planning" loading="lazy"><span class="pf-card-label">CrazyEight · Planning</span></div>
+          <!-- Set B (duplicate for seamless loop) -->
+          <div class="pf-card" aria-hidden="true"><img src="images/google-ads-crazy-eight.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/audit-seo-perso.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/posts-vintage-wisy.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/formation-ia-perso.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/data-campagne-30-jours.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/mon-notion-perso.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/affiche-perso.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/planning-crazy-eight.png" alt="" loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- Row 2 → moves left when scrolling down -->
+      <div class="pf-row">
+        <div class="pf-track pf-track-2-mob" id="pf-track-2">
+          <!-- Set A -->
+          <div class="pf-card"><img src="images/ticket-or-wisy.png" alt="Wisy" loading="lazy"><span class="pf-card-label">Wisy · Ticket d'or</span></div>
+          <div class="pf-card"><img src="images/banniere-perso.png" alt="Bannière" loading="lazy"><span class="pf-card-label">Bannière visuelle</span></div>
+          <div class="pf-card"><img src="images/carrousel-wisy.png" alt="Carrousel" loading="lazy"><span class="pf-card-label">Wisy · Carrousel</span></div>
+          <div class="pf-card"><img src="images/4-familles-wisy.png" alt="Jeu" loading="lazy"><span class="pf-card-label">Wisy · Jeu de cartes</span></div>
+          <div class="pf-card"><img src="images/mon-portfolio.png" alt="Portfolio" loading="lazy"><span class="pf-card-label">Portfolio · VFF</span></div>
+          <div class="pf-card"><img src="images/post-perso.png" alt="Post" loading="lazy"><span class="pf-card-label">Content · Post perso</span></div>
+          <div class="pf-card"><img src="images/billet-avion-wisy.png" alt="Billet" loading="lazy"><span class="pf-card-label">Wisy · Billet avion</span></div>
+          <div class="pf-card"><img src="images/lhistoire-de.png" alt="Storytelling" loading="lazy"><span class="pf-card-label">Storytelling</span></div>
+          <!-- Set B (duplicate) -->
+          <div class="pf-card" aria-hidden="true"><img src="images/ticket-or-wisy.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/banniere-perso.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/carrousel-wisy.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/4-familles-wisy.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/mon-portfolio.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/post-perso.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/billet-avion-wisy.png" alt="" loading="lazy"></div>
+          <div class="pf-card" aria-hidden="true"><img src="images/lhistoire-de.png" alt="" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="pf-scroll-hint" id="pf-hint">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      Scroll
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const isMobile = () => window.innerWidth <= 768;
+  const section  = document.getElementById('portfolio');
+  const track1   = document.getElementById('pf-track-1');
+  const track2   = document.getElementById('pf-track-2');
+  const fillBar  = document.getElementById('pf-fill');
+  const hint     = document.getElementById('pf-hint');
+  if(!section || !track1 || !track2) return;
+
+  /* ── Scroll-driven only on desktop ── */
+  if(isMobile()) return; // CSS animations handle mobile
+
+  let lastY      = window.scrollY;
+  let velocity   = 0;
+  let velSmooth  = 0;
+  let extraOff1  = 0;
+  let extraOff2  = 0;
+  let rafId;
+
+  function getSetWidth(track) {
+    /* Half of scrollWidth = width of one set of 8 images */
+    return track.scrollWidth / 2;
+  }
+
+  function tick() {
+    const scrollY = window.scrollY;
+    const sectionTop    = section.getBoundingClientRect().top + scrollY;
+    const sectionHeight = section.offsetHeight;
+    const vh            = window.innerHeight;
+    const scrollRange   = sectionHeight - vh;
+
+    const rel      = scrollY - sectionTop;
+    const progress = Math.max(0, Math.min(1, rel / scrollRange));
+
+    /* Velocity for acceleration */
+    velocity  = scrollY - lastY;
+    lastY     = scrollY;
+    velSmooth += (velocity - velSmooth) * 0.25;
+
+    /* Extra offset driven by velocity (decays) */
+    extraOff1 += velSmooth * 0.6;
+    extraOff2 += velSmooth * 0.6;
+    extraOff1 *= 0.88;
+    extraOff2 *= 0.88;
+
+    /* Clamp extra offsets so they don't drift too far */
+    const maxExtra = 180;
+    extraOff1 = Math.max(-maxExtra, Math.min(maxExtra, extraOff1));
+    extraOff2 = Math.max(-maxExtra, Math.min(maxExtra, extraOff2));
+
+    const w1 = getSetWidth(track1);
+    const w2 = getSetWidth(track2);
+
+    /* Row 1: start at -w1 (left), move to 0 (right) as progress goes 0→1 */
+    const x1 = -w1 + progress * w1 + extraOff1;
+    /* Row 2: start at 0 (right), move to -w2 (left) as progress goes 0→1 */
+    const x2 = -progress * w2 - extraOff2;
+
+    track1.style.transform = `translateX(${x1}px)`;
+    track2.style.transform = `translateX(${x2}px)`;
+
+    /* Progress bar & hint fade */
+    if(fillBar) fillBar.style.width = (progress * 100) + '%';
+    if(hint) hint.style.opacity = progress > 0.85 ? 0 : (progress < 0.05 ? 1 : (1 - (progress - 0.05) / 0.3));
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  tick();
+
+  /* Clean up if section unmounts (SPA safety) */
+  window.addEventListener('beforeunload', () => cancelAnimationFrame(rafId));
+})();
+</script>
 
 <!-- ══ VISION ══ -->
 <section id="manifeste" style="background:var(--paper);overflow:hidden;padding:clamp(80px,10vw,140px) clamp(20px,4vw,72px);">
