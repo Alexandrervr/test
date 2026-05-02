@@ -262,23 +262,7 @@
     @keyframes bounceY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
     @keyframes hcScroll { from{transform:translateY(0)} to{transform:translateY(-50%)} }
 
-  /* ── HERO CHARACTER ── */
-  #hero-character {
-    position: absolute;
-    bottom: 44px;
-    right: clamp(20px, 5vw, 100px);
-    width: clamp(340px, 36vw, 580px);
-    pointer-events: none;
-    user-select: none;
-    z-index: 4;
-  }
-  #hero-character img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 32px 60px rgba(0,0,0,.7));
-  }
-  @media(max-width: 900px) { #hero-character { display: none; } }
+
     #hero-carousel { position:absolute;top:0;right:0;bottom:44px;width:clamp(280px,38%,520px);display:flex;gap:12px;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 14%,black 86%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,black 14%,black 86%,transparent 100%);z-index:5; }
     #hero-carousel:hover .hc-track { animation-play-state:paused; }
     .hc-col { flex:1;overflow:hidden; }
@@ -431,10 +415,7 @@
 
 
 
-  <!-- Character -->
-  <div id="hero-character" aria-hidden="true">
-    <img src="images/character.png" alt="">
-  </div>
+
 
   <!-- Ticker -->
   <div style="position:absolute;bottom:0;left:0;right:0;border-top:1px solid rgba(255,255,255,.05);overflow:hidden;">
